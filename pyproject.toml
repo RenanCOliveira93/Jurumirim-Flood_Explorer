@@ -1,0 +1,10 @@
+[project]
+name = "jurumirim-flood-explorer"
+version = "0.1.0"
+description = "Estudo educacional independente: análise espacial do mapa de inundação do PAE da UHE Jurumirim"
+requires-python = ">=3.11"
+readme = "README.md"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]

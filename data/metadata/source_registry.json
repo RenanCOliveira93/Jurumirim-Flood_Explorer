@@ -1,0 +1,302 @@
+{
+  "generated_on": "2026-11-05",
+  "sources": [
+    {
+      "id": "SRC-JUR",
+      "title": "PAE Externo UHE Jurumirim",
+      "issuer": "CTG Brasil",
+      "code": "CTG-SB-PAEE-2026-R0-JUR",
+      "edition": "R0, jan/2026; prancha CTG-SB-DE-2415-JUR",
+      "url": null,
+      "local_path": "PAE-UHE-Jurumirim.pdf",
+      "author_note": "Arquivo renomeado pelo usuário (antes CTG-SB-PAEE-2026-R0-JUR.pdf); mesmo conteúdo.",
+      "status": "available",
+      "sha256": "97be8d2fec57d91160ab4eae1587e3b07bd6ebda10c1cd407b6ec6c488c37c42",
+      "n_pages": 72,
+      "file_size_bytes": 14732263
+    },
+    {
+      "id": "SRC-PIR",
+      "title": "PAE UHE Piraju",
+      "issuer": "CBA / Votorantim; estudo HIDROBR (2023); espacialização HEAD5 (2025)",
+      "code": "3308-HID-CBA-A-RT-G00-0001",
+      "edition": "emissão 20/10/2025; capa: REV5 nov/2025 (CV2117-PIR-PA-00-RT-0001)",
+      "url": "https://d2biijvbg5ozmx.cloudfront.net/PIRAJU_TARJADO_para_site_76f2c48308.pdf",
+      "local_path": "PAE-UHE-Piraju.pdf",
+      "author_note": "Versão 'tarjada para site'. 86 páginas numeradas + capa (PDF = impressa + 1). Apêndices 8 e 9 apenas listados.",
+      "status": "available",
+      "sha256": "4db9997730ba16a291b3f6e710630beb0afcfd05fae6553d86a038389f20a74b",
+      "n_pages": 87,
+      "file_size_bytes": 8186679
+    },
+    {
+      "id": "SRC-PSB",
+      "title": "PSB UHE Piraju – Sumário Executivo",
+      "issuer": "CBA",
+      "code": "PIR-PS-00-RT",
+      "edition": "rev. 00",
+      "url": null,
+      "local_path": "PSB_UHE_Piraju.pdf",
+      "author_note": "Cabeçalho do documento: 'Sigilo: Interno'. Confirmar que pode ser divulgado antes de publicar derivados; dados derivados ficam fora do Git (psb_*).",
+      "status": "available",
+      "sha256": "7df1b4d95a42da1b05ccabf3a48c3f83aca2172a31193548e2feb5006fc2d061",
+      "n_pages": 17,
+      "file_size_bytes": 587600
+    },
+    {
+      "id": "SRC-PAR",
+      "title": "PAE UHE Paranapanema",
+      "issuer": "Enel Green Power (EGP Paranapanema S/A)",
+      "code": "GRE.OEM.R.88.BR.H.01111.09.003.08",
+      "edition": "rev. 08, 15/12/2025 (corpo a partir da p.14 cita .05)",
+      "url": "https://www.enel.com.br/pt/quemsomos/archive/d2018-comportamento-etico/plano-de-acao-de-emergencia.html",
+      "local_path": "PAE-UHE-Paranapanema.pdf",
+      "author_note": "21 páginas ('PAGE n of 21' = página do PDF). Mapas (Anexos 1-2) não incluídos; contém contatos pessoais (não reproduzidos).",
+      "status": "available",
+      "sha256": "a54526f0743556c0bb24667eb9a89dae8e0e05a91d1421f64882863d0d9d3796",
+      "n_pages": 21,
+      "file_size_bytes": 1539090
+    },
+    {
+      "id": "SRC-COMPL",
+      "title": "Complemento técnico PAE Piraju",
+      "issuer": "projeto (nota de pesquisa)",
+      "code": null,
+      "edition": "sem data",
+      "url": null,
+      "local_path": "COMPLEMENTO_PAE_UHE_PIRAJU.md",
+      "author_note": "Fonte secundária; alegações conferidas contra o PDF da Piraju (ver claims).",
+      "status": "secondary_checked",
+      "sha256": "1e4133ddf22c8a23981c3e8a097ab4d16db9a19be84ceb2f56d2018387c17418",
+      "n_pages": null,
+      "file_size_bytes": null
+    }
+  ],
+  "claims": [
+    {
+      "id": "C-01",
+      "scenario": "D",
+      "numbers": [
+        "articulação",
+        "ruptura isolada"
+      ],
+      "page_ref_as_given": "58-59",
+      "pdf_pages_expected": [
+        59
+      ],
+      "text": "O PAE Piraju registra articulação dos empreendedores para estudo comum de rompimento em cascata, mas adota ruptura isolada de Piraju (seção 5.3.1).",
+      "verified": true,
+      "status": "verified_manual",
+      "verified_by": "leitura da página do PDF em 2026-11-05 (assistente; sem revisão de engenheiro)",
+      "verified_pages_printed": [
+        58
+      ],
+      "verification_note": "Seção 5.3.1 ocupa as p. 57-58 impressas; articulação e 'ruptura isolada' estão na p. 58.",
+      "text_match": true,
+      "found_on_pages": [
+        59
+      ],
+      "page_confirmed": true
+    },
+    {
+      "id": "C-02",
+      "scenario": "B",
+      "numbers": [
+        "4.856",
+        "2.829",
+        "41,7",
+        "532,66",
+        "534,00",
+        "1,34"
+      ],
+      "page_ref_as_given": "44",
+      "pdf_pages_expected": [
+        45
+      ],
+      "text": "Cheia natural decamilenar 4.856 m³/s; amortecida por Jurumirim 2.829 m³/s (−41,7%); nível calculado 532,66 m; crista 534,00 m; borda livre 1,34 m.",
+      "verified": true,
+      "status": "verified_manual",
+      "verified_by": "leitura da página do PDF em 2026-11-05 (assistente; sem revisão de engenheiro)",
+      "verified_pages_printed": [
+        44
+      ],
+      "verification_note": "Tabela 8 e texto da p. 44 impressa.",
+      "text_match": true,
+      "found_on_pages": [
+        45
+      ],
+      "page_confirmed": true
+    },
+    {
+      "id": "C-03",
+      "scenario": "B",
+      "numbers": [
+        "pequeno volume"
+      ],
+      "page_ref_as_given": "44",
+      "pdf_pages_expected": [
+        45
+      ],
+      "text": "O reservatório de Piraju tem capacidade limitada de amortecimento de grandes cheias.",
+      "verified": true,
+      "status": "verified_manual",
+      "verified_by": "leitura da página do PDF em 2026-11-05 (assistente; sem revisão de engenheiro)",
+      "verified_pages_printed": [
+        44
+      ],
+      "verification_note": "'não apresenta volume significativo para proporcionar o amortecimento de cheias'.",
+      "text_match": true,
+      "found_on_pages": [
+        45
+      ],
+      "page_confirmed": true
+    },
+    {
+      "id": "C-04",
+      "scenario": "C",
+      "numbers": [
+        "35,9",
+        "HEC-RAS"
+      ],
+      "page_ref_as_given": "57",
+      "pdf_pages_expected": [
+        58
+      ],
+      "text": "Estudo de ruptura hipotética atualizado pela HIDROBR (2023), HEC-RAS 6.3.1, MDT de 35,9 km² a jusante.",
+      "verified": true,
+      "status": "verified_manual",
+      "verified_by": "leitura da página do PDF em 2026-11-05 (assistente; sem revisão de engenheiro)",
+      "verified_pages_printed": [
+        57
+      ],
+      "verification_note": "HBR036-23-CBA-PIR-REL-003_R02, mai/2023; MDT Topocart.",
+      "text_match": true,
+      "found_on_pages": [
+        58
+      ],
+      "page_confirmed": true
+    },
+    {
+      "id": "C-05",
+      "scenario": "C",
+      "numbers": [
+        "531,50",
+        "532,70"
+      ],
+      "page_ref_as_given": "59-60",
+      "pdf_pages_expected": [
+        61
+      ],
+      "text": "Cenários TR 10 e 10.000 anos, sem ruptura e com ruptura isolada; cotas iniciais de ruptura 531,50 m e 532,70 m.",
+      "verified": true,
+      "status": "verified_manual",
+      "verified_by": "leitura da página do PDF em 2026-11-05 (assistente; sem revisão de engenheiro)",
+      "verified_pages_printed": [
+        59,
+        60
+      ],
+      "verification_note": "Cenários na p. 59; cotas iniciais, brecha e tempo de formação na p. 60.",
+      "text_match": true,
+      "found_on_pages": [
+        61
+      ],
+      "page_confirmed": true
+    },
+    {
+      "id": "C-06",
+      "scenario": "C",
+      "numbers": [
+        "9,68",
+        "Paranapanema"
+      ],
+      "page_ref_as_given": "63",
+      "pdf_pages_expected": [
+        64
+      ],
+      "text": "Trecho a jusante estudado vai até a UHE Paranapanema, ≈ 9,68 km.",
+      "verified": true,
+      "status": "verified_manual",
+      "verified_by": "leitura da página do PDF em 2026-11-05 (assistente; sem revisão de engenheiro)",
+      "verified_pages_printed": [
+        63
+      ],
+      "verification_note": "Atenção: a ZAS (9,68 km) termina na Paranapanema, mas as Tabelas 9/10 vão até 32,35 km (ST-22).",
+      "text_match": true,
+      "found_on_pages": [
+        64
+      ],
+      "page_confirmed": true
+    },
+    {
+      "id": "C-07",
+      "scenario": "C",
+      "numbers": [
+        "APÊNDICE 9"
+      ],
+      "page_ref_as_given": "81",
+      "pdf_pages_expected": [
+        82
+      ],
+      "text": "Apêndices 8 e 9 identificam memoriais e mapas de inundação; disponibilidade dos anexos a conferir.",
+      "verified": true,
+      "status": "verified_manual",
+      "verified_by": "leitura da página do PDF em 2026-11-05 (assistente; sem revisão de engenheiro)",
+      "verified_pages_printed": [
+        81
+      ],
+      "verification_note": "Apêndices só LISTAM os documentos (HBR036-…, G5-945-…, 3308-HID-CBA-A-DE-G00-0001); não estão no PDF.",
+      "text_match": true,
+      "found_on_pages": [
+        5,
+        9,
+        61,
+        62,
+        64,
+        82
+      ],
+      "page_confirmed": true
+    }
+  ],
+  "gaps": [
+    {
+      "item": "Mapas de inundação de Piraju (Apêndice 9: G5-945-PIR-DE-PAE-0001 e 3308-HID-CBA-A-DE-G00-0001)",
+      "status": "O PDF só LISTA os arquivos; sem mancha georreferenciada de Piraju.",
+      "next": "solicitar/obter com a CBA ou na página do PAE"
+    },
+    {
+      "item": "Memorial do estudo de ruptura de Piraju (HBR036-23-CBA-PIR-REL-003_R02, HIDROBR 2023)",
+      "status": "Apêndice 8 só lista o arquivo; hidrogramas e condições de contorno ficam no memorial.",
+      "next": "solicitar à CBA"
+    },
+    {
+      "item": "Mapas de inundação da Paranapanema (Anexos 1-2, cenários C1-C5)",
+      "status": "O PDF só lista os arquivos; Figuras 2-6 são capturas do HEC-RAS sem coordenadas. Tempos e velocidades estão nesses mapas.",
+      "next": "solicitar à Enel Green Power"
+    },
+    {
+      "item": "Hidrograma completo da ruptura de Jurumirim até Piraju",
+      "status": "O PAE Jurumirim dá só vazão de pico; ST-017 não tem vazão ('-').",
+      "next": "solicitar à CTG"
+    },
+    {
+      "item": "Estudo conjunto de ruptura em cascata (Jurumirim, Piraju, Paranapanema e demais)",
+      "status": "Piraju registra que os empreendedores 'estão em articulação'; sem resultado público conhecido.",
+      "next": "solicitar à CBA, CTG e Enel"
+    },
+    {
+      "item": "Análise estrutural/hidráulica de Piraju e Paranapanema sob onda vinda de montante",
+      "status": "Inexistente nas fontes; os PAEs de cada barragem adotam ruptura ISOLADA.",
+      "next": "estudo especializado"
+    },
+    {
+      "item": "Tabela de seções com tempos de chegada da Paranapanema",
+      "status": "Não consta do PDF.",
+      "next": "extrair dos mapas do Anexo 2 (se obtidos)"
+    },
+    {
+      "item": "Arquivos GIS (Jurumirim, Piraju, Paranapanema)",
+      "status": "Só há mapas em PDF/raster.",
+      "next": "solicitar aos empreendedores"
+    }
+  ]
+}

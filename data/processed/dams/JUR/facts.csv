@@ -1,0 +1,6 @@
+dam,key,label,value,unit,source_document,page_printed,page_pdf,flag,note,verified_by
+JUR,na_max_normal_m,N.A. máximo normal,568.0,m,"PAE Externo UHE Jurumirim, CTG-SB-PAEE-2026-R0-JUR (jan/2026)",,21,,,"inspeção da página renderizada/texto do PDF, 2026-11-05 (assistente; sem revisão de engenheiro)"
+JUR,vol_na_max_normal_hm3,Volume no N.A. máximo normal,7007.52,hm³,"PAE Externo UHE Jurumirim, CTG-SB-PAEE-2026-R0-JUR (jan/2026)",,21,,,"inspeção da página renderizada/texto do PDF, 2026-11-05 (assistente; sem revisão de engenheiro)"
+JUR,vol_na_max_maximorum_hm3,Volume no N.A. máximo maximorum,7701.09,hm³,"PAE Externo UHE Jurumirim, CTG-SB-PAEE-2026-R0-JUR (jan/2026)",,21,,,"inspeção da página renderizada/texto do PDF, 2026-11-05 (assistente; sem revisão de engenheiro)"
+JUR,vol_util_hm3,Volume útil,3164.62,hm³,"PAE Externo UHE Jurumirim, CTG-SB-PAEE-2026-R0-JUR (jan/2026)",,21,,,"inspeção da página renderizada/texto do PDF, 2026-11-05 (assistente; sem revisão de engenheiro)"
+JUR,modelagem_trecho_km,Trecho modelado até a barragem de Piraju,33,km (aprox.),"PAE Externo UHE Jurumirim, CTG-SB-PAEE-2026-R0-JUR (jan/2026)",,37,,A modelagem termina na barragem de Piraju.,"inspeção da página renderizada/texto do PDF, 2026-11-05 (assistente; sem revisão de engenheiro)"

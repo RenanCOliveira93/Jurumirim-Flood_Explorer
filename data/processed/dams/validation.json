@@ -1,0 +1,200 @@
+{
+  "generated_on": "2026-11-05",
+  "tabela10_discordancias_ocr": [],
+  "tabela9_discordancias_ocr": [],
+  "n_rupture_rows": 46,
+  "n_natural_rows": 115,
+  "fig17_rms_m": 7.04,
+  "fig17_max_residual_m": 14.18,
+  "fig17_n_control_points": 14,
+  "fig17_pixel_size_m": 18.18,
+  "fig17_labels_utm": {
+    "ST-22": {
+      "px": [
+        111.5,
+        155.5
+      ],
+      "x_utm": 654209.1,
+      "y_utm": 7441176.9
+    },
+    "ST-20": {
+      "px": [
+        416.5,
+        149.5
+      ],
+      "x_utm": 659754.5,
+      "y_utm": 7441284.4
+    },
+    "ST-18": {
+      "px": [
+        622.0,
+        264.5
+      ],
+      "x_utm": 663490.9,
+      "y_utm": 7439193.8
+    },
+    "ST-01": {
+      "px": [
+        799.5,
+        283.5
+      ],
+      "x_utm": 666718.2,
+      "y_utm": 7438847.7
+    },
+    "ST-21": {
+      "px": [
+        223.5,
+        306.5
+      ],
+      "x_utm": 656245.5,
+      "y_utm": 7438432.5
+    },
+    "ST-02": {
+      "px": [
+        800.0,
+        346.5
+      ],
+      "x_utm": 666727.3,
+      "y_utm": 7437702.9
+    },
+    "ST-19": {
+      "px": [
+        462.0,
+        364.0
+      ],
+      "x_utm": 660581.8,
+      "y_utm": 7437386.5
+    },
+    "ST-15": {
+      "px": [
+        626.5,
+        381.0
+      ],
+      "x_utm": 663572.7,
+      "y_utm": 7437076.9
+    },
+    "ST-03": {
+      "px": [
+        821.0,
+        387.5
+      ],
+      "x_utm": 667109.1,
+      "y_utm": 7436957.8
+    },
+    "ST-17": {
+      "px": [
+        484.0,
+        400.5
+      ],
+      "x_utm": 660981.8,
+      "y_utm": 7436723.2
+    },
+    "ST-14": {
+      "px": [
+        691.0,
+        400.5
+      ],
+      "x_utm": 664745.5,
+      "y_utm": 7436722.2
+    },
+    "ST-16": {
+      "px": [
+        540.5,
+        437.5
+      ],
+      "x_utm": 662009.1,
+      "y_utm": 7436050.6
+    },
+    "ST-04": {
+      "px": [
+        843.5,
+        435.5
+      ],
+      "x_utm": 667518.2,
+      "y_utm": 7436085.5
+    },
+    "ST-12": {
+      "px": [
+        725.5,
+        479.5
+      ],
+      "x_utm": 665372.7,
+      "y_utm": 7435286.5
+    },
+    "ST-05": {
+      "px": [
+        861.0,
+        473.0
+      ],
+      "x_utm": 667836.4,
+      "y_utm": 7435404.0
+    },
+    "ST-13": {
+      "px": [
+        653.0,
+        487.0
+      ],
+      "x_utm": 664054.5,
+      "y_utm": 7435150.6
+    },
+    "ST-10": {
+      "px": [
+        782.5,
+        487.5
+      ],
+      "x_utm": 666409.1,
+      "y_utm": 7435140.9
+    },
+    "ST-06": {
+      "px": [
+        914.0,
+        505.5
+      ],
+      "x_utm": 668800.0,
+      "y_utm": 7434813.2
+    },
+    "ST-11": {
+      "px": [
+        702.0,
+        535.5
+      ],
+      "x_utm": 664945.5,
+      "y_utm": 7434269.1
+    },
+    "ST-09": {
+      "px": [
+        782.0,
+        547.5
+      ],
+      "x_utm": 666400.0,
+      "y_utm": 7434050.6
+    },
+    "ST-08": {
+      "px": [
+        819.5,
+        590.0
+      ],
+      "x_utm": 667081.8,
+      "y_utm": 7433278.2
+    },
+    "ST-07": {
+      "px": [
+        925.0,
+        586.5
+      ],
+      "x_utm": 669000.0,
+      "y_utm": 7433341.3
+    }
+  },
+  "fig17_st08_fix": "rótulo lido como '80-15' (OCR) atribuído a ST-08 por posição, conferido visualmente",
+  "river_source": "OSM waterway=river name='Rio Paranapanema' (ODbL), vias mescladas",
+  "piraju_dam_to_river_m": 66,
+  "km_osm_piraju_to_paranapanema_dam": 9.73,
+  "km_pae_piraju_zas": 9.68,
+  "pos_9_68km_to_official_paranapanema_dam_m": 46,
+  "piraju_official_vs_jurumirim_st017_m": 45,
+  "label_offset_m_min": 445,
+  "label_offset_m_max": 1070,
+  "label_offset_n": 22,
+  "nota": "Posições das seções de Piraju por quilometragem sobre o eixo OSM: ILUSTRAÇÃO (±centenas de m). Distâncias a rótulos da Fig.17 só limitam grosseiramente (caixas de texto ficam ao lado das linhas)."
+}

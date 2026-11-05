@@ -1,0 +1,33 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+outputs/frames/
+*.egg-info/
+
+.venv/
+CTG-SB-PAEE-2026-R0-JUR.pdf
+PAE-UHE-Jurumirim.pdf
+study/
+
+# PAE UHE Piraju (CBA): documento de terceiros e derivados textuais/figuras
+data/raw/PAE_UHE_PIRAJU.pdf
+PAE-UHE-Piraju.pdf
+PAE-UHE-Paranapanema.pdf
+PSB_UHE_Piraju.pdf
+data/processed/piraju_*
+
+# Documentos e figuras de terceiros (PDFs de PAE/PSB, imagens de notícias/vídeo): não versionar
+*.pdf
+imagens-video/
+data/interim/
+# Dados derivados do PSB (cabeçalho do documento: 'Sigilo: Interno')
+data/processed/dams/*/psb_*
+data/processed/dams/*/ocr_raw/*.png
+data/processed/paranapanema_*
+data/processed/psb_*
+outputs/frames_selecao/
+outputs/timeline_selecao.mp4
+outputs/*.mp4
