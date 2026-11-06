@@ -19,7 +19,7 @@ st.markdown(
     tag("OFICIAL") + " " + tag("ILUSTRACAO") + "  Reprodução animada dos **tempos de chegada tabelados nos PAEs**. "
     "Não é simulação hidráulica própria: nada além dos valores publicados é calculado.", unsafe_allow_html=True)
 if sel.is_all:
-    st.warning(S.NOT_CASCADE)
+    st.warning(S.CHAIN_BANNER if sel.chain else S.NOT_CASCADE)
 else:
     st.info(f"Cenário isolado: {D.sel_label(*sel.rows[0])}. O relógio começa na ruptura dessa barragem.")
 
@@ -31,13 +31,17 @@ if tmax == 0:
     st.stop()
 
 c1, c2 = st.columns([3, 1])
-t = c1.slider("Tempo desde a ruptura de cada barragem (min)", 0, tmax, min(30, tmax), 1,
-              help="Cada cenário tem relógio próprio: t = 0 é a ruptura da PRÓPRIA barragem.")
+t = c1.slider("Tempo desde a ruptura da 1ª barragem (min)" if sel.chain else "Tempo desde a ruptura de cada barragem (min)", 0, tmax, min(30, tmax), 1,
+              help=("HIPÓTESE: relógio comum; cada barragem rompe quando chega a onda da anterior." if sel.chain else "Cada cenário tem relógio próprio: t = 0 é a ruptura da PRÓPRIA barragem."))
 interp = c2.checkbox("Frente interpolada", False, help=f"{S.INTERP_BANNER}. Interpolação linear entre seções com tempo tabelado; sem extrapolar.")
 if interp:
     st.warning(S.INTERP_BANNER + " (estrela). Interpolação linear entre seções; não há dado do PAE entre elas.")
 st.markdown(f"**t = {t//60} h {t%60:02d} min**")
 
+if sel.chain:
+    off = S.offsets(sel)
+    st.markdown("**Início hipotético do relógio de cada barragem** (tempo tabelado de chegada da onda da barragem a montante): "
+                + " · ".join(f"{D.DAMS[d].name}: " + ("não tabelado" if o is None else f"{int(o)//60} h {int(o)%60:02d} min") for d, o in off.items()))
 summ = S.summary_at(sel, t)
 st.dataframe(summ.rename(columns={"barragem": "Barragem", "cenario": "Cenário", "secoes_atingidas": "Seções atingidas",
                                   "ate_km": "Até o km", "ultima_secao": "Última seção", "vazao_pico_ultima_m3s": "Vazão de pico na última (m³/s)"}),
@@ -60,7 +64,18 @@ with left:
         env = env[env.classe == "ENVOLTORIA_RUPTURA"]
         folium.GeoJson(env.__geo_interface__, name="Envoltória de Jurumirim (digitalizada, PAE p.38)",
                        style_function=lambda _: {"color": "#555", "weight": 1, "fillOpacity": .12}).add_to(m)
-    col = {"atingida": "#d62728", "não atingida": "#ffffff", "sem tempo no PAE": "#999999"}
+    for dam in [d for d in sel.dam_ids if d != "JUR"]:
+        zz = D.zas_stretch(dam)
+        if zz is not None:
+            folium.GeoJson(zz.to_crs(4326)[["zas_km_oficial", "geometry"]], style_function=lambda f: {"color": "#d62728", "weight": 6, "opacity": .6},
+                           tooltip=folium.GeoJsonTooltip(["zas_km_oficial"], aliases=["ZAS oficial (km), trecho de rio ILUSTRATIVO"])).add_to(m)
+    if "PIR" in sel.dam_ids:
+        ep = D.estimate_polygons("ruptura", 10000 if "10000" in (sel.scenario("PIR") or "ruptura_tr10000") else 10)
+        if ep is not None and len(ep):
+            folium.GeoJson(ep.to_crs(4326)[["classe", "geometry"]], style_function=lambda f: {"color": "#8e24aa", "weight": 1, "dashArray": "5",
+                           "fillColor": "#8e24aa", "fillOpacity": .25 if f["properties"]["classe"] == "ZAS" else .12},
+                           tooltip="ESTIMATIVA EXPLORATÓRIA (relevo até a cota do PAE); não é mapa do PAE").add_to(m)
+    col = {"atingida": "#d62728", "não atingida": "#ffffff", "sem tempo no PAE": "#999999", "ainda não rompeu (hipótese)": "#eeeeee"}
     for _, r in state.iterrows():
         la, lo = TO.transform(r.x_utm, r.y_utm)[::-1]
         folium.CircleMarker([la, lo], radius=7 if r.estado == "atingida" else 5, color=D.COLORS[r.dam], weight=2, fill=True,

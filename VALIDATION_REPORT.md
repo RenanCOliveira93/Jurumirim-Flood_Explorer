@@ -53,6 +53,21 @@ Documentos reais recebidos e processados (SHA-256 em `data/metadata/source_regis
 | MP4 da seleção (`export_selection_mp4`) e servidor Streamlit | gerado; `/_stcore/health` ok |
 | Alegações C-01…C-07 do complemento | conferidas manualmente; 2 correções de página, 1 ressalva |
 
+### Atualização: camadas de paridade, estimativa de Piraju e encadeamento (2026-11-05)
+| Verificação | Resultado |
+|---|---|
+| `pytest -q` | **106 passed** (inclui novos testes de encadeamento e da métrica de elevação) |
+| AppTest, modo «Todas» + encadeamento (Simulação em t = 150 e Mapa) | sem exceções |
+| `scripts/build_estimates.py` | ZAS: Piraju 9,65 km (OSM) × 9,68 oficial; Paranapanema 9,95 × 10. Estimativa de ruptura TR 10.000: 11,5 km² (ZAS 3,4); cheia natural: 8,0 km². **Correção:** o fechamento morfológico da máscara acrescentava ~0,6 % de células com terreno acima da cota (achado pelo teste de consistência do terreno 3D); agora só entram células abaixo da cota, o que reduziu levemente as áreas (11,6→11,5 km²; urbanizada tocada 86.200→85.066 m²; avanço lateral máximo 1,09→0,88 km) |
+| Validação da estimativa SEM ruptura × mancha clara da Fig. 17 | cobertura 94,6 % (99,7 % com tolerância de 36 m); **não mede excesso** |
+| Segmentação da mancha clara da Fig. 17 | só captura trechos largos; **não** usada como mancha oficial |
+| Mapa no navegador | usuário viu o mapa; erro `AttributeError: data.water` era servidor com módulo antigo em memória (reiniciado) |
+
+Limites: a estimativa **não valida a ruptura**; o relevo é MDS; as posições são ilustrativas. Paranapanema não tem estimativa (sem cotas).
+
+### Atualização: altitude, força, extensão lateral, % urbana e tempo
+`pytest -q` → **112 passed** (novos: `tests/test_exposure.py`, página 8 no smoke). `make exposure` gera `data/processed/dams/exposure/*.csv`. A busca nos 4 PDFs por duração/permanência/recessão/hidrograma **não encontrou dado de duração** (só definições de glossário): por isso a duração é registrada como não calculável. Falhas durante o desenvolvimento: três testes meus estavam rígidos demais (NaN em ST-22, arredondamento de 1 m); corrigidos nos testes, não nos dados.
+
 ### Falhas e correções nesta etapa
 - Segmentação por cor da linha amarela da Fig. 17 **falhou** (baixa saturação/ruído); substituída por quilometragem sobre o eixo OSM com validações independentes.
 - Testes antigos assumiam «sem PDF = não verificado»; reescritos. Várias correções menores de UI (colisão de variável, nomes de colunas, `use_container_width` → `width="stretch"`, rótulo de tempo do MP4).

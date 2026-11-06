@@ -63,6 +63,10 @@ def roads() -> gpd.GeoDataFrame:
     return gis.load_roads()
 
 
+def water() -> gpd.GeoDataFrame:
+    return gis.load_water()
+
+
 def envelope():
     p = polygons()
     return p[p.classe == "ENVOLTORIA_RUPTURA"].geometry.iloc[0]

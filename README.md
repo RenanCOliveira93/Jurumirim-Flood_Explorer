@@ -24,7 +24,7 @@ Reproduzir o mapa do PAE não valida um modelo independente. English: [README.en
 ## Início rápido (macOS)
 ```bash
 make setup     # cria .venv e instala dependências
-make test      # 101 testes (parser, CRS, geometria, barragens, filtro, app...)
+make test      # 100+ testes (parser, CRS, geometria, barragens, filtro, app...)
 make run       # dashboard em http://localhost:8501
 ```
 `make data` refaz o pipeline (exige o PDF do PAE na raiz e internet para IBGE/Copernicus/OSM).
@@ -38,14 +38,25 @@ make run       # dashboard em http://localhost:8501
 - `docs/` — [metodologia](docs/METODOLOGIA.md) · [dados](docs/DADOS.md) · [limitações](docs/LIMITACOES.md) · [licenças](docs/LICENCAS.md) · [validação](docs/VALIDACAO.md) · [storyboard GenAI (opcional)](docs/STORYBOARD_GENAI.md)
 - [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md) — comandos realmente executados, resultados e pendências
 
+## Documentação, perguntas e apresentação
+- [`docs/DOCUMENTACAO.md`](docs/DOCUMENTACAO.md): documentação completa (resultados, método, limites, referências).
+- [`docs/PERGUNTAS_E_RESPOSTAS.md`](docs/PERGUNTAS_E_RESPOSTAS.md): 30 perguntas e respostas (👷 engenheiro, 🏠 morador, 🌍 pessoa de fora); também na página «Perguntas por perfil».
+- [`docs/ROTEIRO_APRESENTACAO.md`](docs/ROTEIRO_APRESENTACAO.md): roteiro de vídeo e slides.
+- **Visão de drone** (relevo sombreado, 3D, vídeos): `make drone`.
+
+![Corredor Jurumirim → Piraju em 3D](docs/img/3d_corredor.png)
+
 ## Etiquetas
 `DADO OFICIAL` (valor do PAE) · `DERIVADO DO PAE` (processado) · `ESTIMATIVA EXPLORATÓRIA` · `ILUSTRAÇÃO`.
 
 ## Barragens a jusante e filtro do dashboard
 Fontes: PAE Jurumirim, **PAE UHE Piraju** (CBA), **PSB de Piraju** e **PAE UHE Paranapanema** (Enel). Veja [`docs/SOURCE_REGISTRY.md`](docs/SOURCE_REGISTRY.md).
 - **Filtro lateral** (persiste entre páginas): **«Por Barragem Isolada»** ou **«Todas barragens selecionadas»**. A página *Simulação* e as demais páginas usam esse filtro.
+- **Mapa:** Jurumirim traz as manchas ZAS/ZSS do PAE. Piraju e Paranapanema trazem a **ZAS como trecho de rio** (9,68 e 10 km) e a **situação normal** (água atual, OSM) para comparar. Só Piraju tem uma **ESTIMATIVA exploratória de mancha** (relevo até a cota do PAE), separada do dado oficial; veja os limites em `docs/LIMITACOES.md`.
+- **«Encadear no tempo»** (opcional, só em «Todas»): hipótese de ruptura sequencial que desloca os relógios pelos tempos dos PAEs; não soma vazões.
+- **Página «Altitude, força, extensão e duração»:** pressão dinâmica da água, avanço lateral além da margem normal, % da área urbanizada tocada, altitude × cota da água e o que se pode (e não se pode) dizer sobre duração. `make exposure`.
 - Os resultados são **incrementais**: acrescentar uma barragem não apaga nem altera as já selecionadas.
 - «Todas» **sobrepõe cenários isolados**, cada um com o relógio da própria ruptura. **Não é simulação de cascata**; a ruptura em cascata permanece **não modelada**.
 - Piraju (Tabelas 9/10) e Paranapanema vêm de tabelas/figuras dos PAEs; as Tabelas 9/10 são imagens lidas por OCR **sem revisão de engenheiro**. Posições das seções de Piraju são **ILUSTRAÇÃO**. Não há mancha georreferenciada para Piraju nem Paranapanema nos PDFs.
-- Comandos: `make dams` (usa o OCR versionado), `make ocr` (opcional), `make piraju`. Os PDFs (e derivados do PSB, «Sigilo: Interno») ficam fora do Git. O dashboard inicia sem os PDFs.
+- Comandos: `make estimates`, `make dams` (usa o OCR versionado), `make ocr` (opcional), `make piraju`. Os PDFs (e derivados do PSB, «Sigilo: Interno») ficam fora do Git. O dashboard inicia sem os PDFs.
 - Docs: [`COMPARACAO_JURUMIRIM_PIRAJU.md`](docs/COMPARACAO_JURUMIRIM_PIRAJU.md), [`LIMITACOES.md`](docs/LIMITACOES.md).

@@ -1,0 +1,7 @@
+cenario,transectos,mediana_m,p90_m,maximo_m,largura_total_mediana_m
+"JUR oficial (envoltória ZAS+ZSS, PAE p. 38)",129,145.0,443.0,2291,769.0
+JUR oficial (só ZAS),26,239.0,604.0,1079,607.0
+PIR estimativa natural TR 10,114,7.0,87.0,159,178.0
+PIR estimativa natural TR 10000,114,14.0,93.0,719,183.0
+PIR estimativa ruptura TR 10,126,52.0,142.0,743,260.0
+PIR estimativa ruptura TR 10000,126,56.0,161.0,880,286.0

@@ -1,0 +1,72 @@
+cenario,id_poligono,tipo,densidade,municipio,area_km2,area_na_envoltoria_km2,pct_na_envoltoria,distancia_a_envoltoria_m
+ruptura_tr10000,39,Área urbanizada,Densa,Piraju,5.6906131508900835,0.04611971948105992,0.8104525515646098,0.0
+ruptura_tr10000,40,Área urbanizada,Densa,Piraju,0.7903200756271335,0.006571544242712398,0.8315041519725735,0.0
+ruptura_tr10000,49,Outros equipamentos urbanos,Densa,Piraju,0.37191969957151455,0.0,0.0,597.8844014157775
+ruptura_tr10000,57,Área urbanizada,Pouco densa,Piraju,0.26191319042831235,0.0,0.0,890.2186864414099
+ruptura_tr10000,42,Área urbanizada,Pouco densa,Piraju,0.22821634076111652,0.0,0.0,39.60966574373585
+ruptura_tr10000,43,Área urbanizada,Pouco densa,Piraju,0.22092462911293714,0.0019572030751470525,0.8859143876378429,0.0
+ruptura_tr10000,54,Área urbanizada,Pouco densa,Piraju,0.21909495353305164,0.0,0.0,753.4876546141179
+ruptura_tr10000,53,Área urbanizada,Pouco densa,Piraju,0.12008788787100971,0.0,0.0,1525.695640386641
+ruptura_tr10000,32,Área urbanizada,Pouco densa,Bernardino de Campos,0.10117240512597254,0.0,0.0,813.961376129604
+ruptura_tr10000,41,Área urbanizada,Pouco densa,Piraju,0.09036831490475164,0.0,0.0,1742.108067249757
+ruptura_tr10000,52,Loteamento vazio,Loteamento vazio,Piraju,0.08401330876478971,0.0,0.0,633.963789810916
+ruptura_tr10000,48,Área urbanizada,Pouco densa,Piraju,0.047766104463627626,0.02674761328695746,55.99705813842307,0.0
+ruptura_tr10000,56,Área urbanizada,Pouco densa,Piraju,0.03476611780676591,0.0,0.0,1458.0375502375723
+ruptura_tr10000,51,Outros equipamentos urbanos,Pouco densa,Piraju,0.028374682916449602,0.0,0.0,570.8293039127599
+ruptura_tr10000,50,Área urbanizada,Pouco densa,Piraju,0.026657948120635183,0.0036694722831777534,13.765021473416837,0.0
+ruptura_tr10000,55,Área urbanizada,Pouco densa,Piraju,0.01919891135356914,0.0,0.0,1359.8775593955713
+ruptura_tr10000,47,Área urbanizada,Pouco densa,Piraju,0.017564827617906207,0.0,0.0,1317.5048750816284
+ruptura_tr10000,46,Área urbanizada,Pouco densa,Piraju,0.013921154132604661,0.0,0.0,1791.7054939340044
+ruptura_tr10,39,Área urbanizada,Densa,Piraju,5.6906131508900835,0.03261938694320645,0.5732139240233607,0.0
+ruptura_tr10,40,Área urbanizada,Densa,Piraju,0.7903200756271335,0.005671544242712398,0.7176262400030675,0.0
+ruptura_tr10,49,Outros equipamentos urbanos,Densa,Piraju,0.37191969957151455,0.0,0.0,607.2194200614729
+ruptura_tr10,57,Área urbanizada,Pouco densa,Piraju,0.26191319042831235,0.0,0.0,905.6083073499098
+ruptura_tr10,42,Área urbanizada,Pouco densa,Piraju,0.22821634076111652,0.0,0.0,55.612819431660284
+ruptura_tr10,43,Área urbanizada,Pouco densa,Piraju,0.22092462911293714,0.00030772449479940555,0.13928935675256748,0.0
+ruptura_tr10,54,Área urbanizada,Pouco densa,Piraju,0.21909495353305164,0.0,0.0,775.6711043159014
+ruptura_tr10,53,Área urbanizada,Pouco densa,Piraju,0.12008788787100971,0.0,0.0,1525.695640386641
+ruptura_tr10,32,Área urbanizada,Pouco densa,Bernardino de Campos,0.10117240512597254,0.0,0.0,813.961376129604
+ruptura_tr10,41,Área urbanizada,Pouco densa,Piraju,0.09036831490475164,0.0,0.0,1742.108067249757
+ruptura_tr10,52,Loteamento vazio,Loteamento vazio,Piraju,0.08401330876478971,0.0,0.0,635.2595264827851
+ruptura_tr10,48,Área urbanizada,Pouco densa,Piraju,0.047766104463627626,0.022269655985067523,46.62229887728266,0.0
+ruptura_tr10,56,Área urbanizada,Pouco densa,Piraju,0.03476611780676591,0.0,0.0,1478.3518739839194
+ruptura_tr10,51,Outros equipamentos urbanos,Pouco densa,Piraju,0.028374682916449602,0.0,0.0,600.8104505464127
+ruptura_tr10,50,Área urbanizada,Pouco densa,Piraju,0.026657948120635183,0.0031141594572435343,11.681917314682405,0.0
+ruptura_tr10,55,Área urbanizada,Pouco densa,Piraju,0.01919891135356914,0.0,0.0,1374.971379884951
+ruptura_tr10,47,Área urbanizada,Pouco densa,Piraju,0.017564827617906207,0.0,0.0,1325.0983897050255
+ruptura_tr10,46,Área urbanizada,Pouco densa,Piraju,0.013921154132604661,0.0,0.0,1814.462562526702
+natural_tr10000,39,Área urbanizada,Densa,Piraju,5.6906131508900835,0.001213833077393148,0.021330444456645052,0.0
+natural_tr10000,40,Área urbanizada,Densa,Piraju,0.7903200756271335,0.0036040496103864664,0.45602404918369144,0.0
+natural_tr10000,49,Outros equipamentos urbanos,Densa,Piraju,0.37191969957151455,0.0,0.0,693.762581289369
+natural_tr10000,57,Área urbanizada,Pouco densa,Piraju,0.26191319042831235,0.0,0.0,1115.4434685526064
+natural_tr10000,42,Área urbanizada,Pouco densa,Piraju,0.22821634076111652,0.0,0.0,97.24322058649886
+natural_tr10000,43,Área urbanizada,Pouco densa,Piraju,0.22092462911293714,0.0,0.0,35.449028666439006
+natural_tr10000,54,Área urbanizada,Pouco densa,Piraju,0.21909495353305164,0.0,0.0,838.5263051480671
+natural_tr10000,53,Área urbanizada,Pouco densa,Piraju,0.12008788787100971,0.0,0.0,1778.8537151432556
+natural_tr10000,32,Área urbanizada,Pouco densa,Bernardino de Campos,0.10117240512597254,0.0,0.0,813.961376129604
+natural_tr10000,41,Área urbanizada,Pouco densa,Piraju,0.09036831490475164,0.0,0.0,1958.1052473682878
+natural_tr10000,52,Loteamento vazio,Loteamento vazio,Piraju,0.08401330876478971,0.0,0.0,741.2556629506073
+natural_tr10000,48,Área urbanizada,Pouco densa,Piraju,0.047766104463627626,0.000585280854918553,1.225305813590526,0.0
+natural_tr10000,56,Área urbanizada,Pouco densa,Piraju,0.03476611780676591,0.0,0.0,1551.6689593913782
+natural_tr10000,51,Outros equipamentos urbanos,Pouco densa,Piraju,0.028374682916449602,0.0,0.0,793.0434600085317
+natural_tr10000,50,Área urbanizada,Pouco densa,Piraju,0.026657948120635183,0.0,0.0,5.854965015314519
+natural_tr10000,55,Área urbanizada,Pouco densa,Piraju,0.01919891135356914,0.0,0.0,1440.0511821005196
+natural_tr10000,47,Área urbanizada,Pouco densa,Piraju,0.017564827617906207,0.0,0.0,1391.6309839677597
+natural_tr10000,46,Área urbanizada,Pouco densa,Piraju,0.013921154132604661,0.0,0.0,1881.5199044977276
+natural_tr10,39,Área urbanizada,Densa,Piraju,5.6906131508900835,0.00027047700542823445,0.004753037998830205,0.0
+natural_tr10,40,Área urbanizada,Densa,Piraju,0.7903200756271335,0.0016684105942416422,0.21110568308893427,0.0
+natural_tr10,49,Outros equipamentos urbanos,Densa,Piraju,0.37191969957151455,0.0,0.0,712.9382172640874
+natural_tr10,57,Área urbanizada,Pouco densa,Piraju,0.26191319042831235,0.0,0.0,1130.0598592128208
+natural_tr10,42,Área urbanizada,Pouco densa,Piraju,0.22821634076111652,0.0,0.0,97.24322058649886
+natural_tr10,43,Área urbanizada,Pouco densa,Piraju,0.22092462911293714,0.0,0.0,35.449028666439006
+natural_tr10,54,Área urbanizada,Pouco densa,Piraju,0.21909495353305164,0.0,0.0,860.4285308973022
+natural_tr10,53,Área urbanizada,Pouco densa,Piraju,0.12008788787100971,0.0,0.0,1825.6401107935235
+natural_tr10,32,Área urbanizada,Pouco densa,Bernardino de Campos,0.10117240512597254,0.0,0.0,830.6693761650301
+natural_tr10,52,Loteamento vazio,Loteamento vazio,Piraju,0.08401330876478971,0.0,0.0,765.2396770296243
+natural_tr10,48,Área urbanizada,Pouco densa,Piraju,0.047766104463627626,9.272225176274386e-05,0.19411725700459603,0.0
+natural_tr10,56,Área urbanizada,Pouco densa,Piraju,0.03476611780676591,0.0,0.0,1578.4322230626667
+natural_tr10,51,Outros equipamentos urbanos,Pouco densa,Piraju,0.028374682916449602,0.0,0.0,885.624547791527
+natural_tr10,50,Área urbanizada,Pouco densa,Piraju,0.026657948120635183,0.0,0.0,44.57158143756916
+natural_tr10,55,Área urbanizada,Pouco densa,Piraju,0.01919891135356914,0.0,0.0,1459.6230187840995
+natural_tr10,47,Área urbanizada,Pouco densa,Piraju,0.017564827617906207,0.0,0.0,1408.3647793056898
+natural_tr10,46,Área urbanizada,Pouco densa,Piraju,0.013921154132604661,0.0,0.0,1895.131653133358

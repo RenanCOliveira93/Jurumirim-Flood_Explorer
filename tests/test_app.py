@@ -17,7 +17,7 @@ def test_home_smoke_and_disclaimer():
     assert any("não substitui o PAE oficial" in w.value for w in at.warning)
 
 
-@pytest.mark.parametrize("page", ["2_Secoes_da_onda.py", "3_Comparacao.py", "4_Metodo_e_qualidade.py", "6_Cascata_Piraju.py"])
+@pytest.mark.parametrize("page", ["2_Secoes_da_onda.py", "3_Comparacao.py", "4_Metodo_e_qualidade.py", "6_Cascata_Piraju.py", "8_Altitude_forca_extensao.py", "9_Visao_de_drone.py", "10_Perguntas_por_perfil.py"])
 def test_pages_smoke(page):
     at = _run(f"pages/{page}")
     assert any("não substitui o PAE oficial" in w.value for w in at.warning)

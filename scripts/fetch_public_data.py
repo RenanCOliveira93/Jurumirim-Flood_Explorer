@@ -146,8 +146,23 @@ def osm_waterways():
     }
 
 
+def osm_water():
+    """Corpos d'água atuais (reservatórios e calha do rio) para a camada 'situação normal' (comparação)."""
+    s, w, n, e = BBOX[1], BBOX[0], BBOX[3], BBOX[2]
+    q = (f'[out:json][timeout:180];(way["natural"="water"]({s},{w},{n},{e});relation["natural"="water"]({s},{w},{n},{e});'
+         f'way["waterway"="riverbank"]({s},{w},{n},{e}););out geom;')
+    r, used = overpass(q)
+    print("   overpass:", used)
+    (RAW / "osm_water.json").write_bytes(r.content)
+    sources["openstreetmap_water"] = {
+        "arquivos": ["data/raw/osm_water.json"], "url": used, "baixado_em": TODAY,
+        "licenca": "ODbL 1.0 — © colaboradores do OpenStreetMap", "datum": "WGS84 (EPSG:4326)",
+        "observacao": "Água em condição atual/normal (colaborativo; a data da imagem-base varia). Camada de COMPARAÇÃO, não é resultado de simulação.",
+    }
+
+
 if __name__ == "__main__":
-    steps = {"ibge": ibge, "ibge_urban": ibge_urban, "dem": copernicus_dem, "osm": osm, "osm_waterways": osm_waterways}
+    steps = {"ibge": ibge, "ibge_urban": ibge_urban, "dem": copernicus_dem, "osm": osm, "osm_waterways": osm_waterways, "osm_water": osm_water}
     chosen = sys.argv[1:] or list(steps)
     prev = json.loads((META / "public_data_sources.json").read_text()) if (META / "public_data_sources.json").exists() else {}
     for c in chosen:

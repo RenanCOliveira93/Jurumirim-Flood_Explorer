@@ -9,7 +9,7 @@ import plotly.graph_objects as go  # noqa: E402
 setup("Comparação: ruptura × cheia sem ruptura")
 sel = sidebar_filter()
 if sel.is_all:
-    st.warning(S.NOT_CASCADE + " As comparações abaixo são sempre DENTRO de cada barragem (ruptura × cheia natural do mesmo PAE).")
+    st.warning((S.CHAIN_BANNER if sel.chain else S.NOT_CASCADE) + " As comparações abaixo são sempre DENTRO de cada barragem (ruptura × cheia natural do mesmo PAE).")
 
 # ------------------------------------------------------------------ Jurumirim (conteúdo original, inalterado)
 if "JUR" in sel.dam_ids:

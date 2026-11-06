@@ -31,6 +31,15 @@ piraju:         ## processa o PAE da Piraju se data/raw/PAE_UHE_PIRAJU.pdf exist
 dams:           ## constrói (incrementalmente) dados de Piraju/Paranapanema a partir do OCR versionado
 	$(PY) -W ignore scripts/build_dams.py
 
+estimates:      ## ZAS (trechos) + ESTIMATIVAS exploratórias de mancha de Piraju (relevo até a cota do PAE) + validação
+	$(VENV)/bin/python scripts/build_estimates.py
+
+exposure:       ## força, extensão lateral, % urbana, altitude e tempos (depende de make estimates)
+	$(VENV)/bin/python scripts/build_exposure.py
+
+drone:          ## mapas de relevo (docs/img) e vídeos estilo drone (outputs/; exige ffmpeg; leva alguns minutos)
+	$(VENV)/bin/python scripts/build_drone.py
+
 ocr:            ## OPCIONAL: refaz o OCR das tabelas (pip install rapidocr-onnxruntime); depois rode make dams
 	$(PY) scripts/ocr_pae_images.py
 

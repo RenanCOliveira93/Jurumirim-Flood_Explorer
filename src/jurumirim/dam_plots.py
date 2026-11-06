@@ -39,11 +39,14 @@ def time_distance(df, t_min: float | None = None, interpolate: bool = False) -> 
     fig = go.Figure()
     for (dam, sc), g in df.groupby(["dam", "scenario"], sort=False):
         g = g.dropna(subset=["t_frente_min"]).sort_values("distancia_km")
-        fig.add_trace(go.Scatter(x=g.t_frente_min, y=g.distancia_km, mode="lines+markers", name=_name(dam, sc), text=g.secao,
+        off = float(g.offset_min.iloc[0]) if "offset_min" in g and len(g) and g.offset_min.iloc[0] == g.offset_min.iloc[0] else 0.0
+        chained = "offset_min" in g and bool(g.offset_min.fillna(0).ne(0).any())
+        g = g.assign(t_plot=g.t_frente_min + off)
+        fig.add_trace(go.Scatter(x=g.t_plot, y=g.distancia_km, mode="lines+markers", name=_name(dam, sc), text=g.secao,
                                  line=dict(color=D.COLORS[dam], dash="dot" if interpolate else "solid"),
                                  hovertemplate="%{text}<br>%{x} min<br>%{y} km<extra>" + _name(dam, sc) + "</extra>"))
         if t_min is not None and interpolate:
-            km = S.front_km(g, t_min)
+            km = S.front_km(g, t_min - off)
             if km is not None:
                 fig.add_trace(go.Scatter(x=[t_min], y=[km], mode="markers", marker=dict(symbol="star", size=16, color="#ff9800",
                                                                                          line=dict(width=1, color="#000")),
@@ -51,7 +54,8 @@ def time_distance(df, t_min: float | None = None, interpolate: bool = False) -> 
                                          hovertemplate=f"{INTERP}<br>{km:.2f} km<extra></extra>"))
     if t_min is not None:
         fig.add_vline(x=t_min, line=dict(color="#555", dash="dash"))
-    fig.update_layout(height=420, xaxis_title="Tempo desde a ruptura DA PRÓPRIA barragem (min)",
+    fig.update_layout(height=420, xaxis_title=("Tempo desde a ruptura da 1ª barragem (min) — HIPÓTESE de encadeamento" if (df.get("offset_min") is not None and df.offset_min.fillna(0).ne(0).any())
+                                  else "Tempo desde a ruptura DA PRÓPRIA barragem (min)"),
                       yaxis_title="Distância ao longo do rio (km)", legend=dict(orientation="h", y=-0.2))
     return fig
 

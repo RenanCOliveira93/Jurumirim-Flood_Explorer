@@ -34,8 +34,18 @@ Todas as ordens de grandeza abaixo vêm dos PAEs, **de estudos distintos, com hi
 | C2. Ruptura isolada da Paranapanema | `documented`, sem seções nem mapa |
 | D. Cascata | **`not_modelled`** |
 
+## 3.1 O que cada barragem tem no mapa
+| Item | Jurumirim | Piraju | Paranapanema |
+|---|---|---|---|
+| Mancha oficial (ZAS/ZSS) | sim (p. 38, vetorizada) | **não** (Apêndice 9 ausente) | **não** (Anexos sem coordenadas) |
+| ZAS | polígono | **trecho de 9,68 km** (ILUSTRAÇÃO) | **trecho de 10 km** (ILUSTRAÇÃO) |
+| ZSS | polígono | «não definida» no PAE | não definida no PDF |
+| Seções e tempos | sim | sim (OCR) | **não** |
+| Estimativa exploratória de mancha | n/a (há mancha oficial) | **sim**, rotulada | **não** (sem cotas) |
+| Sobreposição município/urbanizadas | sim | **só da estimativa** | não |
+
 ## 4. Filtro «Por Barragem Isolada» × «Todas barragens selecionadas»
-«Todas» **sobrepõe cenários isolados**, cada um com o **relógio da própria ruptura** (t = 0 na ruptura daquela barragem). **Não é cascata**: o tempo de Piraju não depende de Jurumirim. O comportamento é coberto por teste. O texto fixo «NÃO é cascata» aparece em todo resultado do modo «Todas».
+«Todas» **sobrepõe cenários isolados**, cada um com o **relógio da própria ruptura** (t = 0 na ruptura daquela barragem). **Não é cascata**: o tempo de Piraju não depende de Jurumirim. Opcionalmente, **«Encadear no tempo»** supõe que cada barragem rompe quando chega a onda da anterior (Jurumirim→Piraju: 1 h 59 min); só desloca relógios, **não soma vazões** e é uma hipótese, não um estudo. O comportamento é coberto por teste. O texto fixo «NÃO é cascata» aparece em todo resultado do modo «Todas».
 
 ## 5. Limites de interpretação
 - Vazão de pico não é hidrograma; compará-las entre estudos não prova falha nem segurança.

@@ -27,7 +27,12 @@ Labels used throughout: OFFICIAL DATA · DERIVED FROM PAE · EXPLORATORY ESTIMAT
 Sources: Jurumirim PAE, **Piraju PAE** (CBA), Piraju **PSB** and **Paranapanema PAE** (Enel); see `docs/SOURCE_REGISTRY.md` (Portuguese).
 - **Sidebar filter** (kept across pages): **"Por Barragem Isolada"** (one dam) or **"Todas barragens selecionadas"** (all selected). The *Simulação* page and the other pages follow it.
 - Updates are **incremental**: adding a dam never overwrites or changes the ones already selected.
+- **Map:** Jurumirim has the PAE's ZAS/ZSS polygons. Piraju and Paranapanema show the **ZAS as a river stretch** (9.68 / 10 km) plus a **normal-conditions water layer** (OSM) for comparison. Only Piraju has an **EXPLORATORY ESTIMATE** of the flooded area (terrain filled to the PAE's tabulated elevations), kept separate from official data.
+- Optional **"Encadear no tempo"** (only in "All"): a hypothetical sequential-break timeline that shifts clocks by the PAEs' arrival times; flows are not added.
 - "All" **overlays isolated scenarios**, each on its own clock (t = 0 at that dam's own breach). It is **not a cascade simulation**; cascade rupture stays **`not_modelled`**.
 - Piraju Tables 9/10 are raster images read by OCR with consistency checks, **not engineer-reviewed**. Piraju section positions are **ILLUSTRATION** (km along the OSM river line). The PDFs contain no georeferenced inundation map for Piraju or Paranapanema.
 - Commands: `make dams` (uses the versioned OCR output), `make ocr` (optional), `make piraju`. PDFs and PSB-derived data (header "Sigilo: Interno") are git-ignored; the dashboard starts without the PDFs.
 - No failure probability, safe/unsafe classification or extrapolation of the 568.00 m scenario is produced.
+
+## Documentation and presentation (Portuguese)
+`docs/DOCUMENTACAO.md` (full documentation and references), `docs/PERGUNTAS_E_RESPOSTAS.md` (30 Q&As for an engineer, a Piraju resident and an outsider), `docs/ROTEIRO_APRESENTACAO.md` (video and slide script). Drone-style visuals (shaded relief, 3D, videos): `make drone`.

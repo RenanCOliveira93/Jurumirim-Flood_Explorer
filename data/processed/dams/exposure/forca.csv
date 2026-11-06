@@ -1,0 +1,106 @@
+barragem,cenario,secao,km,vel_ms,prof_m,vazao_m3s,origem,pressao_dinamica_kpa,carga_velocidade_m,h_x_v_m2s
+Jurumirim,"ruptura (568,00 m)",ST-001,0.0,9.46,,42728.0,PAE Jurumirim p. 38,44.746,4.561,
+Jurumirim,"ruptura (568,00 m)",ST-002,0.82,6.92,,24017.0,PAE Jurumirim p. 38,23.943,2.441,
+Jurumirim,"ruptura (568,00 m)",ST-003,1.87,6.39,,23278.0,PAE Jurumirim p. 38,20.416,2.081,
+Jurumirim,"ruptura (568,00 m)",ST-004,3.34,3.68,,21500.0,PAE Jurumirim p. 38,6.771,0.69,
+Jurumirim,"ruptura (568,00 m)",ST-005,5.44,4.5,,20768.0,PAE Jurumirim p. 38,10.125,1.032,
+Jurumirim,"ruptura (568,00 m)",ST-006,6.71,3.8,,20577.0,PAE Jurumirim p. 38,7.22,0.736,
+Jurumirim,"ruptura (568,00 m)",ST-007,9.78,3.25,,20522.0,PAE Jurumirim p. 38,5.281,0.538,
+Jurumirim,"ruptura (568,00 m)",ST-008,11.41,7.38,,20426.0,PAE Jurumirim p. 38,27.232,2.776,
+Jurumirim,"ruptura (568,00 m)",ST-009,13.69,2.04,,20304.0,PAE Jurumirim p. 38,2.081,0.212,
+Jurumirim,"ruptura (568,00 m)",ST-010,16.42,2.67,,20199.0,PAE Jurumirim p. 38,3.564,0.363,
+Jurumirim,"ruptura (568,00 m)",ST-011,18.44,3.25,,20124.0,PAE Jurumirim p. 38,5.281,0.538,
+Jurumirim,"ruptura (568,00 m)",ST-012,21.82,2.73,,20039.0,PAE Jurumirim p. 38,3.726,0.38,
+Jurumirim,"ruptura (568,00 m)",ST-013,23.97,2.09,,19949.0,PAE Jurumirim p. 38,2.184,0.223,
+Jurumirim,"ruptura (568,00 m)",ST-014,27.8,2.29,,19932.0,PAE Jurumirim p. 38,2.622,0.267,
+Jurumirim,"ruptura (568,00 m)",ST-015,28.62,2.41,,19931.0,PAE Jurumirim p. 38,2.904,0.296,
+Jurumirim,"ruptura (568,00 m)",ST-016,31.3,1.84,,19928.0,PAE Jurumirim p. 38,1.693,0.173,
+Jurumirim,"ruptura (568,00 m)",ST-017,32.88,1.99,,,PAE Jurumirim p. 38,1.98,0.202,
+Piraju,ruptura TR 10000,ST-01,0.0,13.02,36.04,26813.0,PAE Piraju Tabela 10 (OCR),84.76,8.64,469.241
+Piraju,ruptura TR 10000,ST-02,1.0,7.91,34.1,23621.0,PAE Piraju Tabela 10 (OCR),31.284,3.189,269.731
+Piraju,ruptura TR 10000,ST-03,2.0,10.67,30.48,22519.0,PAE Piraju Tabela 10 (OCR),56.924,5.803,325.222
+Piraju,ruptura TR 10000,ST-04,3.0,9.66,36.19,21315.0,PAE Piraju Tabela 10 (OCR),46.658,4.756,349.595
+Piraju,ruptura TR 10000,ST-05,4.0,7.21,31.2,17033.0,PAE Piraju Tabela 10 (OCR),25.992,2.65,224.952
+Piraju,ruptura TR 10000,ST-06,5.0,6.81,28.9,15886.0,PAE Piraju Tabela 10 (OCR),23.188,2.364,196.809
+Piraju,ruptura TR 10000,ST-07,6.0,4.45,30.1,13663.0,PAE Piraju Tabela 10 (OCR),9.901,1.009,133.945
+Piraju,ruptura TR 10000,ST-08,7.0,4.5,27.0,12053.0,PAE Piraju Tabela 10 (OCR),10.125,1.032,121.5
+Piraju,ruptura TR 10000,ST-09,8.0,4.47,27.93,11612.0,PAE Piraju Tabela 10 (OCR),9.99,1.018,124.847
+Piraju,ruptura TR 10000,ST-10,9.0,5.88,31.99,16514.0,PAE Piraju Tabela 10 (OCR),17.287,1.762,188.101
+Piraju,ruptura TR 10000,ST-11,9.65,7.33,30.49,16481.0,PAE Piraju Tabela 10 (OCR),26.864,2.738,223.492
+Piraju,ruptura TR 10000,ST-12,9.86,10.57,25.32,16467.0,PAE Piraju Tabela 10 (OCR),55.862,5.694,267.632
+Piraju,ruptura TR 10000,ST-13,10.7,9.93,29.42,16370.0,PAE Piraju Tabela 10 (OCR),49.302,5.026,292.141
+Piraju,ruptura TR 10000,ST-14,11.7,6.9,28.16,16255.0,PAE Piraju Tabela 10 (OCR),23.805,2.427,194.304
+Piraju,ruptura TR 10000,ST-15,12.7,8.31,23.93,16200.0,PAE Piraju Tabela 10 (OCR),34.528,3.52,198.858
+Piraju,ruptura TR 10000,ST-16,13.7,10.76,28.09,16140.0,PAE Piraju Tabela 10 (OCR),57.889,5.901,302.248
+Piraju,ruptura TR 10000,ST-17,14.6,7.89,23.82,16029.0,PAE Piraju Tabela 10 (OCR),31.126,3.173,187.94
+Piraju,ruptura TR 10000,ST-18,17.1,6.62,22.21,15223.0,PAE Piraju Tabela 10 (OCR),21.912,2.234,147.03
+Piraju,ruptura TR 10000,ST-19,19.75,6.14,25.06,14602.0,PAE Piraju Tabela 10 (OCR),18.85,1.921,153.868
+Piraju,ruptura TR 10000,ST-20,24.5,5.89,29.71,14005.0,PAE Piraju Tabela 10 (OCR),17.346,1.768,174.992
+Piraju,ruptura TR 10000,ST-21,29.5,4.02,26.91,13793.0,PAE Piraju Tabela 10 (OCR),8.08,0.824,108.178
+Piraju,ruptura TR 10000,ST-22,32.35,3.19,32.64,2834.0,PAE Piraju Tabela 10 (OCR),5.088,0.519,104.122
+Piraju,cheia natural TR 10000,ST-01,0.0,6.96,20.18,,PAE Piraju Tabela 9 (OCR),24.221,2.469,140.453
+Piraju,cheia natural TR 10000,ST-02,1.0,3.42,18.83,,PAE Piraju Tabela 9 (OCR),5.848,0.596,64.399
+Piraju,cheia natural TR 10000,ST-03,2.0,3.31,18.19,,PAE Piraju Tabela 9 (OCR),5.478,0.558,60.209
+Piraju,cheia natural TR 10000,ST-04,3.0,2.66,24.46,,PAE Piraju Tabela 9 (OCR),3.538,0.361,65.064
+Piraju,cheia natural TR 10000,ST-05,4.0,2.41,19.25,,PAE Piraju Tabela 9 (OCR),2.904,0.296,46.393
+Piraju,cheia natural TR 10000,ST-06,5.0,2.1,17.16,,PAE Piraju Tabela 9 (OCR),2.205,0.225,36.036
+Piraju,cheia natural TR 10000,ST-07,6.0,1.62,18.09,,PAE Piraju Tabela 9 (OCR),1.312,0.134,29.306
+Piraju,cheia natural TR 10000,ST-08,7.0,1.86,15.16,,PAE Piraju Tabela 9 (OCR),1.73,0.176,28.198
+Piraju,cheia natural TR 10000,ST-09,8.0,1.83,16.6,,PAE Piraju Tabela 9 (OCR),1.674,0.171,30.378
+Piraju,cheia natural TR 10000,ST-10,9.0,1.89,21.72,,PAE Piraju Tabela 9 (OCR),1.786,0.182,41.051
+Piraju,cheia natural TR 10000,ST-11,9.65,2.31,22.91,,PAE Piraju Tabela 9 (OCR),2.668,0.272,52.922
+Piraju,cheia natural TR 10000,ST-12,9.86,7.11,11.11,,PAE Piraju Tabela 9 (OCR),25.276,2.577,78.992
+Piraju,cheia natural TR 10000,ST-13,10.7,7.58,13.29,,PAE Piraju Tabela 9 (OCR),28.728,2.928,100.738
+Piraju,cheia natural TR 10000,ST-14,11.7,5.83,12.05,,PAE Piraju Tabela 9 (OCR),16.994,1.732,70.252
+Piraju,cheia natural TR 10000,ST-15,12.7,4.11,9.52,,PAE Piraju Tabela 9 (OCR),8.446,0.861,39.127
+Piraju,cheia natural TR 10000,ST-16,13.7,5.25,15.2,,PAE Piraju Tabela 9 (OCR),13.781,1.405,79.8
+Piraju,cheia natural TR 10000,ST-17,14.6,3.91,11.5,,PAE Piraju Tabela 9 (OCR),7.644,0.779,44.965
+Piraju,cheia natural TR 10000,ST-18,17.1,3.87,9.75,,PAE Piraju Tabela 9 (OCR),7.488,0.763,37.732
+Piraju,cheia natural TR 10000,ST-19,19.75,3.18,12.83,,PAE Piraju Tabela 9 (OCR),5.056,0.515,40.799
+Piraju,cheia natural TR 10000,ST-20,24.5,1.51,23.91,,PAE Piraju Tabela 9 (OCR),1.14,0.116,36.104
+Piraju,cheia natural TR 10000,ST-21,29.5,0.89,25.51,,PAE Piraju Tabela 9 (OCR),0.396,0.04,22.704
+Piraju,cheia natural TR 10000,ST-22,32.35,0.66,32.3,,PAE Piraju Tabela 9 (OCR),0.218,0.022,21.318
+Piraju,ruptura TR 10,ST-01,0.0,13.29,34.59,22301.0,PAE Piraju Tabela 10 (OCR),88.312,9.002,459.701
+Piraju,ruptura TR 10,ST-02,1.0,9.03,32.7,19871.0,PAE Piraju Tabela 10 (OCR),40.77,4.156,295.281
+Piraju,ruptura TR 10,ST-03,2.0,10.2,29.38,19070.0,PAE Piraju Tabela 10 (OCR),52.02,5.303,299.676
+Piraju,ruptura TR 10,ST-04,3.0,9.67,34.94,18592.0,PAE Piraju Tabela 10 (OCR),46.754,4.766,337.87
+Piraju,ruptura TR 10,ST-05,4.0,6.89,29.8,15352.0,PAE Piraju Tabela 10 (OCR),23.736,2.42,205.322
+Piraju,ruptura TR 10,ST-06,5.0,6.96,27.44,14293.0,PAE Piraju Tabela 10 (OCR),24.221,2.469,190.982
+Piraju,ruptura TR 10,ST-07,6.0,4.58,28.52,12477.0,PAE Piraju Tabela 10 (OCR),10.488,1.069,130.622
+Piraju,ruptura TR 10,ST-08,7.0,4.42,25.33,11345.0,PAE Piraju Tabela 10 (OCR),9.768,0.996,111.959
+Piraju,ruptura TR 10,ST-09,8.0,4.43,26.2,10960.0,PAE Piraju Tabela 10 (OCR),9.812,1.0,116.066
+Piraju,ruptura TR 10,ST-10,9.0,5.62,30.4,14461.0,PAE Piraju Tabela 10 (OCR),15.792,1.61,170.848
+Piraju,ruptura TR 10,ST-11,9.65,7.33,29.01,14425.0,PAE Piraju Tabela 10 (OCR),26.864,2.738,212.643
+Piraju,ruptura TR 10,ST-12,9.86,10.47,23.68,14414.0,PAE Piraju Tabela 10 (OCR),54.81,5.587,247.93
+Piraju,ruptura TR 10,ST-13,10.7,9.97,27.75,14270.0,PAE Piraju Tabela 10 (OCR),49.7,5.066,276.668
+Piraju,ruptura TR 10,ST-14,11.7,6.63,26.53,14133.0,PAE Piraju Tabela 10 (OCR),21.978,2.24,175.894
+Piraju,ruptura TR 10,ST-15,12.7,8.02,22.81,14061.0,PAE Piraju Tabela 10 (OCR),32.16,3.278,182.936
+Piraju,ruptura TR 10,ST-16,13.7,10.38,26.74,13962.0,PAE Piraju Tabela 10 (OCR),53.872,5.492,277.561
+Piraju,ruptura TR 10,ST-17,14.6,7.48,22.35,13868.0,PAE Piraju Tabela 10 (OCR),27.975,2.852,167.178
+Piraju,ruptura TR 10,ST-18,17.1,6.39,20.45,13155.0,PAE Piraju Tabela 10 (OCR),20.416,2.081,130.676
+Piraju,ruptura TR 10,ST-19,19.75,5.92,23.29,12578.0,PAE Piraju Tabela 10 (OCR),17.523,1.786,137.877
+Piraju,ruptura TR 10,ST-20,24.5,5.38,28.42,12005.0,PAE Piraju Tabela 10 (OCR),14.472,1.475,152.9
+Piraju,ruptura TR 10,ST-21,29.5,3.51,26.51,11824.0,PAE Piraju Tabela 10 (OCR),6.16,0.628,93.05
+Piraju,ruptura TR 10,ST-22,32.35,2.75,32.5,2784.0,PAE Piraju Tabela 10 (OCR),3.781,0.385,89.375
+Piraju,cheia natural TR 10,ST-01,0.0,6.68,17.89,,PAE Piraju Tabela 9 (OCR),22.311,2.274,119.505
+Piraju,cheia natural TR 10,ST-02,1.0,2.8,15.62,,PAE Piraju Tabela 9 (OCR),3.92,0.4,43.736
+Piraju,cheia natural TR 10,ST-03,2.0,2.65,15.07,,PAE Piraju Tabela 9 (OCR),3.511,0.358,39.936
+Piraju,cheia natural TR 10,ST-04,3.0,1.89,21.42,,PAE Piraju Tabela 9 (OCR),1.786,0.182,40.484
+Piraju,cheia natural TR 10,ST-05,4.0,1.9,16.24,,PAE Piraju Tabela 9 (OCR),1.805,0.184,30.856
+Piraju,cheia natural TR 10,ST-06,5.0,1.75,14.22,,PAE Piraju Tabela 9 (OCR),1.531,0.156,24.885
+Piraju,cheia natural TR 10,ST-07,6.0,1.28,15.22,,PAE Piraju Tabela 9 (OCR),0.819,0.084,19.482
+Piraju,cheia natural TR 10,ST-08,7.0,1.45,12.37,,PAE Piraju Tabela 9 (OCR),1.051,0.107,17.936
+Piraju,cheia natural TR 10,ST-09,8.0,1.26,13.95,,PAE Piraju Tabela 9 (OCR),0.794,0.081,17.577
+Piraju,cheia natural TR 10,ST-10,9.0,1.25,19.15,,PAE Piraju Tabela 9 (OCR),0.781,0.08,23.938
+Piraju,cheia natural TR 10,ST-11,9.65,1.8,20.47,,PAE Piraju Tabela 9 (OCR),1.62,0.165,36.846
+Piraju,cheia natural TR 10,ST-12,9.86,6.65,8.36,,PAE Piraju Tabela 9 (OCR),22.111,2.254,55.594
+Piraju,cheia natural TR 10,ST-13,10.7,7.47,10.04,,PAE Piraju Tabela 9 (OCR),27.9,2.844,74.999
+Piraju,cheia natural TR 10,ST-14,11.7,5.72,8.58,,PAE Piraju Tabela 9 (OCR),16.359,1.668,49.078
+Piraju,cheia natural TR 10,ST-15,12.7,3.63,6.75,,PAE Piraju Tabela 9 (OCR),6.588,0.672,24.502
+Piraju,cheia natural TR 10,ST-16,13.7,3.9,12.59,,PAE Piraju Tabela 9 (OCR),7.605,0.775,49.101
+Piraju,cheia natural TR 10,ST-17,14.6,3.53,9.01,,PAE Piraju Tabela 9 (OCR),6.23,0.635,31.805
+Piraju,cheia natural TR 10,ST-18,17.1,3.52,7.38,,PAE Piraju Tabela 9 (OCR),6.195,0.632,25.978
+Piraju,cheia natural TR 10,ST-19,19.75,2.13,11.11,,PAE Piraju Tabela 9 (OCR),2.268,0.231,23.664
+Piraju,cheia natural TR 10,ST-20,24.5,0.83,23.76,,PAE Piraju Tabela 9 (OCR),0.344,0.035,19.721
+Piraju,cheia natural TR 10,ST-21,29.5,0.48,25.49,,PAE Piraju Tabela 9 (OCR),0.115,0.012,12.235
+Piraju,cheia natural TR 10,ST-22,32.35,0.38,32.27,,PAE Piraju Tabela 9 (OCR),0.072,0.007,12.263

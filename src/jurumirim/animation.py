@@ -91,7 +91,7 @@ def frame_selection(sel: S.Selection, t_min: float, interpolate=False, figsize=(
     for dam, sc in sel.rows:
         col = D.COLORS[dam]
         g = st_[st_.dam == dam]
-        for estado, face, edge in (("atingida", col, "k"), ("não atingida", "white", col), ("sem tempo no PAE", "#bbbbbb", "#555")):
+        for estado, face, edge in (("atingida", col, "k"), ("não atingida", "white", col), ("sem tempo no PAE", "#bbbbbb", "#555"), ("ainda não rompeu (hipótese)", "#eeeeee", "#999")):
             q = g[g.estado == estado]
             ax.scatter(q.x_utm, q.y_utm, s=70 if estado == "atingida" else 45, c=face, ec=edge, zorder=4, label=None)
         xs_all += list(g.x_utm); ys_all += list(g.y_utm)
@@ -103,7 +103,7 @@ def frame_selection(sel: S.Selection, t_min: float, interpolate=False, figsize=(
         xs_all.append(dp.loc[dam, "x_utm"]); ys_all.append(dp.loc[dam, "y_utm"])
     if interpolate:
         for dam, sc in sel.with_sections():
-            km = S.front_km(D.sections(dam, sc), t_min)
+            km = S.front_km(D.sections(dam, sc), t_min - (S.offsets(sel).get(dam) or 0))
             if km is not None:
                 g = D.sections(dam, sc).dropna(subset=["x_utm"]).sort_values("distancia_km")
                 ax.scatter([np.interp(km, g.distancia_km, g.x_utm)], [np.interp(km, g.distancia_km, g.y_utm)], marker="*", s=300,
@@ -114,15 +114,15 @@ def frame_selection(sel: S.Selection, t_min: float, interpolate=False, figsize=(
     ax.set_title("Seções atingidas (cheio) × não atingidas (vazio); cinza = sem tempo no PAE", fontsize=9)
     for dam, sc in sel.with_sections():
         g = st_[st_.dam == dam].dropna(subset=["t_frente_min"]).sort_values("distancia_km")
-        ax2.plot(g.t_frente_min, g.distancia_km, "o-", color=D.COLORS[dam], ms=4, label=D.sel_label(dam, sc).replace("UHE ", ""))
+        ax2.plot(g.t_frente_min + g.offset_min.fillna(0), g.distancia_km, "o-", color=D.COLORS[dam], ms=4, label=D.sel_label(dam, sc).replace("UHE ", ""))
     ax2.axvline(t_min, color="#555", ls="--")
-    ax2.set_xlabel("Tempo desde a ruptura DA PRÓPRIA barragem (min)"); ax2.set_ylabel("Distância ao longo do rio (km)")
+    ax2.set_xlabel("Tempo desde a ruptura da 1ª barragem (min), HIPÓTESE" if sel.chain else "Tempo desde a ruptura DA PRÓPRIA barragem (min)"); ax2.set_ylabel("Distância ao longo do rio (km)")
     ax2.grid(alpha=.3); ax2.legend(fontsize=7, loc="upper left")
-    fig.suptitle(f"t = {int(t_min)//60}h{int(t_min)%60:02d} após a ruptura hipotética de cada barragem (relógios independentes)",
+    fig.suptitle(f"t = {int(t_min)//60}h{int(t_min)%60:02d} " + ("após a ruptura de Jurumirim (encadeamento HIPOTÉTICO)" if sel.chain else "após a ruptura hipotética de cada barragem (relógios independentes)"),
                  fontsize=12, y=.985)
     banner = (S.INTERP_BANNER + " (estrela)" if interpolate else "DADO OFICIAL: tempos tabelados nas seções dos PAEs; sem interpolação")
     if sel.is_all:
-        banner += "\n" + textwrap.fill(S.NOT_CASCADE, 165)
+        banner += "\n" + textwrap.fill(S.CHAIN_BANNER if sel.chain else S.NOT_CASCADE, 165)
     fig.text(.01, .94, banner, fontsize=7, va="top", bbox=dict(fc="#fff3cd" if interpolate else "#e3f2fd", ec="#999"))
     fig.text(.01, .01, "Posições de Piraju: ILUSTRAÇÃO (km sobre eixo OSM). Sem mancha de Piraju/Paranapanema (não consta dos PDFs). "
              "Não é previsão.\n" + DISCLAIMER, fontsize=6.5, color="#555")

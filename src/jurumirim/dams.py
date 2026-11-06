@@ -162,3 +162,37 @@ def river_xy():
     ss = np.linspace(min(s_a, s_b), min(max(s_a, s_b), river.length), 600)
     xy = np.array([river.interpolate(s).coords[0] for s in ss])
     return xy[:, 0], xy[:, 1]
+
+
+# --- Derivados de Piraju/Paranapanema: trechos de ZAS (oficiais, por extensão) e ESTIMATIVAS exploratórias de mancha ---
+ZAS_KM = {"PIR": 9.68, "PAR": 10.0}  # PAE Piraju p.63 (impr.); PAE Paranapanema item 11 (PDF p.18)
+
+
+def zas_stretch(dam_id: str):
+    """GeoDataFrame (UTM 22S) do trecho de rio com a extensão da ZAS do PAE. ILUSTRAÇÃO: posição = eixo OSM."""
+    import geopandas as gpd
+    f = DAMS_DIR / dam_id / "zas_trecho.gpkg"
+    return gpd.read_file(f) if f.exists() else None
+
+
+def estimate_polygons(tipo: str, tr_anos: int):
+    """ESTIMATIVA EXPLORATÓRIA de Piraju (relevo até a cota do PAE): classes 'ZAS' e 'alem_ZAS'. None se não gerada."""
+    import geopandas as gpd
+    f = DAMS_DIR / "PIR" / "estimativa_mancha.gpkg"
+    if not f.exists():
+        return None
+    g = gpd.read_file(f)
+    return g[(g.tipo == tipo) & (g.tr_anos == tr_anos)]
+
+
+def estimate_metrics() -> dict:
+    f = DAMS_DIR / "PIR" / "estimativa_metricas.json"
+    return json.loads(f.read_text()) if f.exists() else {}
+
+
+def estimate_overlap(kind: str, cenario: str) -> pd.DataFrame:
+    f = DAMS_DIR / "PIR" / f"estimativa_overlap_{kind}.csv"
+    if not f.exists():
+        return pd.DataFrame()
+    d = pd.read_csv(f)
+    return d[d.cenario == cenario].drop(columns="cenario")

@@ -143,3 +143,21 @@ def test_paranapanema_has_no_sections():
     assert not D.DAMS["PAR"].has_sections
     with pytest.raises(KeyError):
         D.sections("PAR")
+
+
+def test_piraju_rise_over_natural_flood_is_derived_from_tables():
+    """Métrica do mapa: cota máx. da ruptura − cota máx. da cheia natural (mesmo TR), das Tabelas 9 e 10."""
+    from jurumirim import dams as DM
+    c = DM.compare_piraju(10000)
+    assert (c.dif_cota_m.round(6) == (c.elev_max_ruptura_m - c.elev_max_natural_m).round(6)).all()
+    assert c.dif_cota_m.max() < 20 and c.dif_cota_m.notna().all()
+
+
+def test_water_layer_is_normal_condition_polygons():
+    import pytest
+    from jurumirim import paths
+    if not (paths.RAW / "osm_water.json").exists():
+        pytest.skip("osm_water.json ausente (make fetch)")
+    from jurumirim import gis
+    g = gis.load_water()
+    assert len(g) > 0 and g.crs.is_projected and g.geom_type.isin(["Polygon", "MultiPolygon"]).all()

@@ -74,6 +74,11 @@ def sidebar_filter() -> S.Selection:
                     scen[d] = st.selectbox(name(d), opts, key=f"f_sc_{d}",
                                            format_func=lambda i, d=d: next(s_.label for s_ in D.DAMS[d].scenarios if s_.id == i))
                     _keep(f"f_sc_{d}")
+        chain = False
         if mode == S.MODE_TODAS:
-            st.caption("⚠️ " + S.NOT_CASCADE)
-    return S.make(mode, chosen, scen)
+            _restore("f_chain", False)
+            chain = st.checkbox("Encadear no tempo (hipótese de ruptura sequencial)", key="f_chain",
+                                help="Cada barragem rompe quando chega a onda da anterior (tempo do PAE). Só desloca relógios; ILUSTRAÇÃO.")
+            _keep("f_chain")
+            st.caption("⚠️ " + (S.CHAIN_BANNER if chain else S.NOT_CASCADE))
+    return S.make(mode, chosen, scen, chain=chain)

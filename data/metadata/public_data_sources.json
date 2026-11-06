@@ -53,5 +53,15 @@
     "licenca": "ODbL 1.0 — © colaboradores do OpenStreetMap",
     "datum": "WGS84 (EPSG:4326)",
     "observacao": "Eixo colaborativo do rio, usado só para posicionar seções por distância ao longo do rio (ILUSTRAÇÃO); não é o levantamento topobatimétrico do PAE."
+  },
+  "openstreetmap_water": {
+    "arquivos": [
+      "data/raw/osm_water.json"
+    ],
+    "url": "https://overpass.private.coffee/api/interpreter",
+    "baixado_em": "2026-11-05",
+    "licenca": "ODbL 1.0 — © colaboradores do OpenStreetMap",
+    "datum": "WGS84 (EPSG:4326)",
+    "observacao": "Água em condição atual/normal (colaborativo; a data da imagem-base varia). Camada de COMPARAÇÃO, não é resultado de simulação."
   }
 }

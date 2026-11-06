@@ -19,7 +19,7 @@ st.subheader("Seleção atual")
 st.caption("Os arquivos seguem o filtro da barra lateral e levam cenário, documento e página de cada valor.")
 sec = S.sections_for(sel)
 if len(sec):
-    meta = sec.assign(source_document=sec.dam.map({d: D.DAMS[d].document for d in D.DAMS}), aviso=S.NOT_CASCADE if sel.is_all else "")
+    meta = sec.assign(source_document=sec.dam.map({d: D.DAMS[d].document for d in D.DAMS}), aviso=(S.CHAIN_BANNER if sel.chain else S.NOT_CASCADE) if sel.is_all else "")
     st.download_button("⬇️ Seções da seleção (CSV)", meta.to_csv(index=False).encode(), "secoes_selecao.csv", "text/csv")
 fa = D.facts()
 if len(fa):  # dados do PSB (cabeçalho 'Sigilo: Interno') não entram na exportação

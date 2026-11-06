@@ -12,7 +12,7 @@ from jurumirim import dam_plots  # noqa: E402
 setup("Seções da onda")
 sel = sidebar_filter()
 if sel.is_all:
-    st.warning(S.NOT_CASCADE)
+    st.warning((S.CHAIN_BANNER if sel.chain else S.NOT_CASCADE))
 
 # ------------------------------------------------------------------ Jurumirim (conteúdo original, inalterado)
 if "JUR" in sel.dam_ids:

@@ -1,0 +1,7 @@
+cenario,area_urbanizada_piraju_km2,area_tocada_km2,pct_da_area_urbanizada,poligonos_tocados,poligonos_total
+"JUR oficial (envoltória ZAS+ZSS, PAE p. 38)",8.336,0.0033,0.04,2,19
+JUR oficial (só ZAS),8.336,0.0,0.0,0,19
+PIR estimativa ruptura TR 10000,8.336,0.0851,1.02,5,19
+PIR estimativa ruptura TR 10,8.336,0.0647,0.78,5,19
+PIR estimativa natural TR 10000,8.336,0.005,0.06,3,19
+PIR estimativa natural TR 10,8.336,0.002,0.02,3,19

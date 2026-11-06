@@ -37,6 +37,29 @@ def load_roads(crs=CRS) -> gpd.GeoDataFrame:
     return gpd.GeoDataFrame(rows, crs="EPSG:4326").to_crs(crs)
 
 
+def load_water(crs=CRS) -> gpd.GeoDataFrame:
+    """Água atual (OSM natural=water / riverbank): camada 'situação normal' de COMPARAÇÃO (não é simulação)."""
+    from shapely.geometry import Polygon
+    from shapely.ops import polygonize, unary_union
+    data = json.loads((RAW / "osm_water.json").read_text())
+    rows = []
+    for e in data["elements"]:
+        t = e.get("tags", {})
+        if e["type"] == "way" and len(e.get("geometry", [])) >= 4:
+            pts = [(p["lon"], p["lat"]) for p in e["geometry"]]
+            if pts[0] == pts[-1]:
+                rows.append({"osm_id": e["id"], "nome": t.get("name"), "geometry": Polygon(pts)})
+        elif e["type"] == "relation":
+            lines = [LineString([(p["lon"], p["lat"]) for p in m["geometry"]])
+                     for m in e.get("members", []) if m.get("role") == "outer" and len(m.get("geometry", [])) >= 2]
+            polys = list(polygonize(unary_union(lines))) if lines else []
+            if polys:
+                rows.append({"osm_id": e["id"], "nome": t.get("name"), "geometry": unary_union(polys)})
+    g = gpd.GeoDataFrame(rows, crs="EPSG:4326")
+    g["geometry"] = g.geometry.make_valid()
+    return g.to_crs(crs)
+
+
 def municipality_overlap(envelope_geom, municipios: gpd.GeoDataFrame, crs_check=True) -> pd.DataFrame:
     assert municipios.crs.is_projected, "áreas só em CRS projetado"
     out = []

@@ -23,7 +23,7 @@ DOC_PIR = "PAE UHE Piraju (CBA), 3308-HID-CBA-A-RT-G00-0001, emissão 20/10/2025
 DOC_PSB = "PSB UHE Piraju – Sumário Executivo (CBA), PIR-PS-00-RT rev. 00"
 DOC_PAR = "PAE UHE Paranapanema (Enel Green Power), GRE.OEM.R.88.BR.H.01111.09.003.08, rev. 08"
 DOC_COMPL = "COMPLEMENTO_PAE_UHE_PIRAJU.md (nota de pesquisa do projeto)"
-PIRAJU_URL = "https://d2biijvbg5ozmx.cloudfront.net/PIRAJU_TARJADO_para_site_76f2c48308.pdf"
+PIRAJU_URL = "https://d3ltu4sfk36jla.cloudfront.net/cba/PIRAJU_TARJADO_para_site_76f2c48308.pdf"
 
 SCENARIO_STATUS = {"documented", "extracted_pending_review", "source_unavailable", "not_modelled"}
 
@@ -112,7 +112,7 @@ def source_registry(piraju_pdf: Path | None = None) -> list[dict]:
 
     return [
         dict(id="SRC-JUR", title="PAE Externo UHE Jurumirim", issuer="CTG Brasil", code="CTG-SB-PAEE-2026-R0-JUR",
-             edition="R0, jan/2026; prancha CTG-SB-DE-2415-JUR", url=None, local_path=rel(paths.PDF),
+             edition="R0, jan/2026; prancha CTG-SB-DE-2415-JUR", url="https://www.ctgbr.com.br/sustentabilidade/social/seguranca-da-comunidade/pae/pae-arquivos/", local_path=rel(paths.PDF),
              author_note="Arquivo renomeado pelo usuário (antes CTG-SB-PAEE-2026-R0-JUR.pdf); mesmo conteúdo.", **_pdf_info(paths.PDF)),
         dict(id="SRC-PIR", title="PAE UHE Piraju", issuer="CBA / Votorantim; estudo HIDROBR (2023); espacialização HEAD5 (2025)",
              code="3308-HID-CBA-A-RT-G00-0001", edition="emissão 20/10/2025; capa: REV5 nov/2025 (CV2117-PIR-PA-00-RT-0001)",
@@ -120,12 +120,12 @@ def source_registry(piraju_pdf: Path | None = None) -> list[dict]:
              author_note="Versão 'tarjada para site'. 86 páginas numeradas + capa (PDF = impressa + 1). "
                          "Apêndices 8 e 9 apenas listados.", **_pdf_info(piraju_pdf)),
         dict(id="SRC-PSB", title="PSB UHE Piraju – Sumário Executivo", issuer="CBA", code="PIR-PS-00-RT", edition="rev. 00",
-             url=None, local_path=rel(paths.PSB_PIRAJU_PDF),
+             url="https://d3ltu4sfk36jla.cloudfront.net/cba/PSB_Sumario_Executivo_UHE_Piraju_fd580524df.pdf", local_path=rel(paths.PSB_PIRAJU_PDF),
              author_note="Cabeçalho do documento: 'Sigilo: Interno'. Confirmar que pode ser divulgado antes de publicar derivados; "
                          "dados derivados ficam fora do Git (psb_*).", **_pdf_info(paths.PSB_PIRAJU_PDF)),
         dict(id="SRC-PAR", title="PAE UHE Paranapanema", issuer="Enel Green Power (EGP Paranapanema S/A)",
              code="GRE.OEM.R.88.BR.H.01111.09.003.08", edition="rev. 08, 15/12/2025 (corpo a partir da p.14 cita .05)",
-             url="https://www.enel.com.br/pt/quemsomos/archive/d2018-comportamento-etico/plano-de-acao-de-emergencia.html",
+             url="https://www.enel.com.br/pt-saopaulo/quemsomos/archive/d2018-comportamento-etico/plano-de-acao-de-emergencia.html",
              local_path=rel(paths.PARANAPANEMA_PDF),
              author_note="21 páginas ('PAGE n of 21' = página do PDF). Mapas (Anexos 1-2) não incluídos; contém contatos pessoais "
                          "(não reproduzidos).", **_pdf_info(paths.PARANAPANEMA_PDF)),

@@ -69,3 +69,31 @@ def test_front_km_interpolates_inside_and_never_extrapolates():
 def test_coverage_notes_state_what_is_missing():
     n = " ".join(S.coverage_notes(S.make(S.MODE_TODAS, ["PIR", "PAR"])))
     assert "indisponível" in n and "Apêndice 9" in n
+
+
+def test_chain_is_off_by_default_and_only_in_todas():
+    assert S.make(S.MODE_TODAS, ["JUR", "PIR"]).chain is False
+    assert S.make(S.MODE_ISOLADA, ["PIR"], chain=True).chain is False
+    assert S.make(S.MODE_TODAS, ["PIR"], chain=True).chain is False  # uma barragem só: nada a encadear
+    assert S.offsets(S.make(S.MODE_TODAS, ["JUR", "PIR", "PAR"])) == {"JUR": 0.0, "PIR": 0.0, "PAR": 0.0}
+
+
+def test_chain_shifts_only_clocks_using_tabulated_arrival_times():
+    sel = S.make(S.MODE_TODAS, ["JUR", "PIR"], chain=True)
+    off = S.offsets(sel)
+    assert off["JUR"] == 0 and off["PIR"] == 119  # chegada de Jurumirim a Piraju, PAE p. 38 (1 h 59 min)
+    # antes da onda chegar, Piraju 'ainda não rompeu' (hipótese); em t = 119 + 30 ela está no 30º min do PRÓPRIO relógio
+    pre = S.state_at(sel, 60); pp = pre[(pre.dam == "PIR") & pre.t_frente_min.notna()]; assert (pp.estado == "ainda não rompeu (hipótese)").all()  # ST-22 sem tempo segue 'sem tempo no PAE'
+    chained = S.state_at(sel, 119 + 30); alone = S.state_at(S.make(S.MODE_ISOLADA, ["PIR"]), 30)
+    assert chained[chained.dam == "PIR"].estado.tolist() == alone.estado.tolist()
+    # nenhuma vazão é somada ou alterada
+    a = S.sections_for(sel); b = D.sections("PIR", "ruptura_tr10000")
+    assert a[a.dam == "PIR"].vazao_pico_m3s.tolist() == b.vazao_pico_m3s.tolist()
+    assert S.t_max(sel) == 119 + S.t_max(S.make(S.MODE_ISOLADA, ["PIR"]))
+
+
+def test_chain_to_paranapanema_uses_piraju_time_at_zas_end_not_extrapolated():
+    off = S.offsets(S.make(S.MODE_TODAS, ["JUR", "PIR", "PAR"], chain=True))
+    pir = D.sections("PIR", "ruptura_tr10000")
+    st11 = float(pir[pir.secao == "ST-11"].t_frente_min.iloc[0])  # km 9,65 ≈ 9,68 (Paranapanema)
+    assert off["PAR"] == 119 + st11

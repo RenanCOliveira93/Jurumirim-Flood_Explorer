@@ -37,3 +37,10 @@ Marcadores nos tempos tabelados (sem interpolação). Modo opcional de interpola
 3. **Posição das seções:** km do PAE sobre o eixo OSM a partir da coordenada oficial de Piraju (ILUSTRAÇÃO), validada com a coordenada oficial da Paranapanema (46 m), a de Jurumirim ST-017 (45 m), a quilometragem OSM × PAE (9,73 × 9,68 km) e o georreferenciamento da Figura 17 (14 pontos, RMS 7,04 m).
 4. **Filtro:** «Por Barragem Isolada» mostra uma barragem; «Todas barragens selecionadas» sobrepõe cenários isolados, cada um com relógio próprio. Estados: atingida / não atingida / sem tempo no PAE. Sem extrapolação além do tabelado; o cenário 568,00 m de Jurumirim não é escalado.
 5. **Seleção persistente** entre páginas; a página *Simulação* usa a mesma seleção.
+
+## Estimativa exploratória de Piraju e ZAS (`bathtub.py`, `scripts/build_estimates.py`)
+1. **ZAS** = trecho de rio com a extensão do PAE (Piraju 9,68 km; Paranapanema 10 km) sobre o eixo OSM; não é área.
+2. **Estimativa**: perfil de cota máxima (Tabela 10 = ruptura; Tabela 9 = cheia natural) interpolado linearmente em km; células do DEM (UTM 22S, 30 m) abaixo do perfil, a ≤ 1,5 km do eixo, conectadas ao rio (semente a ≤ 90 m) e **a jusante** do eixo da barragem. Separada em «ZAS» (≤ 9,68 km) e «além da ZAS».
+3. **Sobreposição** com municípios e áreas urbanizadas IBGE 2019 usa as mesmas funções de Jurumirim (`gis.py`), mas os resultados são rotulados ESTIMATIVA.
+4. **Validação**: estimativa sem ruptura × mancha clara da Figura 17 (georreferência RMS 7,04 m); `estimativa_metricas.json`.
+5. **Encadeamento (hipótese)**: `selection.offsets` soma o tempo tabelado de chegada da onda à barragem seguinte; só desloca relógios.

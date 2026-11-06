@@ -1,0 +1,43 @@
+{
+  "zas_PIR": {
+    "oficial_km": 9.68,
+    "comprimento_osm_km": 9.65
+  },
+  "zas_PAR": {
+    "oficial_km": 10.0,
+    "comprimento_osm_km": 9.95
+  },
+  "ruptura_tr10000": {
+    "area_total_km2": 11.547,
+    "area_zas_km2": 3.392,
+    "area_alem_zas_km2": 8.155,
+    "poligonos_urbanizados_intersectados": 5,
+    "area_urbanizada_intersectada_m2": 85066
+  },
+  "ruptura_tr10": {
+    "area_total_km2": 11.021,
+    "area_zas_km2": 3.215,
+    "area_alem_zas_km2": 7.807,
+    "poligonos_urbanizados_intersectados": 5,
+    "area_urbanizada_intersectada_m2": 63982
+  },
+  "natural_tr10000": {
+    "area_total_km2": 8.005,
+    "area_zas_km2": 1.928,
+    "area_alem_zas_km2": 6.077,
+    "poligonos_urbanizados_intersectados": 3,
+    "area_urbanizada_intersectada_m2": 5403
+  },
+  "natural_tr10": {
+    "area_total_km2": 7.46,
+    "area_zas_km2": 1.635,
+    "area_alem_zas_km2": 5.825,
+    "poligonos_urbanizados_intersectados": 3,
+    "area_urbanizada_intersectada_m2": 2032
+  },
+  "validacao_fig17_natural_tr10000": {
+    "cobertura_da_mancha_clara_sem_tolerancia": 0.946,
+    "cobertura_com_tolerancia_36m": 0.997,
+    "nota": "Mede só quanto da parte LARGA e segmentável da mancha clara da Fig. 17 (cenário sem ruptura, sem legenda própria) a estimativa cobre. NÃO mede excesso: a segmentação perde o rio estreito. Georreferência da figura: RMS 7.04 m, 18.18 m/px."
+  }
+}
