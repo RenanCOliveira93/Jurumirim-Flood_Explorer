@@ -6,8 +6,9 @@ Aplicativo **local** (Python + Streamlit + notebooks reproduzíveis) que investi
 Jurumirim inundaria toda a cidade de Piraju-SP, **usando exclusivamente o mapa e as tabelas do PAE oficial**
 (CTG Brasil, *PAE Externo UHE Jurumirim*, CTG-SB-PAEE-2026-R0-JUR, jan/2026).
 
-**Não há simulação hidráulica própria.** O PAE é um estudo de emergência, não evidência de falha iminente.
-Reproduzir o mapa do PAE não valida um modelo independente. English: [README.en.md](README.en.md).
+**O dashboard não tem simulação hidráulica própria.** O PAE é um estudo de emergência, não evidência de falha iminente.
+Reproduzir o mapa do PAE não valida um modelo independente. Um **cenário exploratório de volume** (e se 100 % do reservatório chegasse ao vale?)
+roda num repositório separado, com ANUGA: veja [`docs/SIMULADOR_ANUGA.md`](docs/SIMULADOR_ANUGA.md). English: [README.en.md](README.en.md).
 
 ## O que o estudo encontrou (derivado do PAE, p. 38)
 | Pergunta | Resultado | Ressalva |
@@ -46,8 +47,11 @@ make run       # dashboard em http://localhost:8501
 
 ![Corredor Jurumirim → Piraju em 3D](docs/img/3d_corredor.png)
 
+## Cenário de volume (simulador ANUGA, repositório separado)
+7.007,52 hm³ de Jurumirim (volume do PAE) esvaziados em 72 h, 24 h simuladas sobre o relevo Copernicus 30 m: a água fica no vale do rio e atinge **≈ 9 % da área urbanizada** e **≈ 14 % da área rural** de Piraju; pico de 54,6 m às 18,5 h. **Cenário hipotético, Paranapanema e Piraju tratadas como terreno (não é cascata), sem calibração nem revisão de engenheiro.** Detalhes, limites e vídeo: [`docs/SIMULADOR_ANUGA.md`](docs/SIMULADOR_ANUGA.md) · [`simulador-hidro-anuga`](https://github.com/RenanCOliveira93/simulador-hidro-anuga).
+
 ## Etiquetas
-`DADO OFICIAL` (valor do PAE) · `DERIVADO DO PAE` (processado) · `ESTIMATIVA EXPLORATÓRIA` · `ILUSTRAÇÃO`.
+`DADO OFICIAL` (valor do PAE) · `DERIVADO DO PAE` (processado) · `ESTIMATIVA EXPLORATÓRIA` · `ILUSTRAÇÃO` · `SIMULAÇÃO EXPLORATÓRIA` (só no simulador/slides: cenário hipotético de volume).
 
 ## Barragens a jusante e filtro do dashboard
 Fontes: PAE Jurumirim, **PAE UHE Piraju** (CBA), **PSB de Piraju** e **PAE UHE Paranapanema** (Enel). Veja [`docs/SOURCE_REGISTRY.md`](docs/SOURCE_REGISTRY.md).

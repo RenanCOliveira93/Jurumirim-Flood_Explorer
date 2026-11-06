@@ -44,3 +44,11 @@ Marcadores nos tempos tabelados (sem interpolação). Modo opcional de interpola
 3. **Sobreposição** com municípios e áreas urbanizadas IBGE 2019 usa as mesmas funções de Jurumirim (`gis.py`), mas os resultados são rotulados ESTIMATIVA.
 4. **Validação**: estimativa sem ruptura × mancha clara da Figura 17 (georreferência RMS 7,04 m); `estimativa_metricas.json`.
 5. **Encadeamento (hipótese)**: `selection.offsets` soma o tempo tabelado de chegada da onda à barragem seguinte; só desloca relógios.
+
+## Cenário exploratório de volume (simulador ANUGA, repositório separado)
+Detalhes em [`SIMULADOR_ANUGA.md`](SIMULADOR_ANUGA.md) e no repositório `simulador-hidro-anuga`.
+1. **Volume → hidrograma:** 7.007,52 hm³ (PAE Jurumirim) em curva triangular de 72 h (pico em 7,2 h); o gerador aborta se a integral do CSV não fechar o volume (tolerância 1e-6).
+2. **Relevo:** Copernicus GLO-30 reprojetado para UTM 22S (EPSG:31982), 30 m, recorte de 33 × 22 km; sem conversão de datum vertical.
+3. **Propagação:** ANUGA 4.1 (águas rasas 2D, volumes finitos), malha ≈ 10.000 m²/triângulo, Manning 0,04, bordas transmissivas, entrada por linha de 600 m a jusante da barragem (assumida). 24 h simuladas.
+4. **Impacto:** triângulos do solver × áreas urbanizadas IBGE 2019 × município de Piraju; área e fração por profundidade máxima (0,1/0,5/1/2 m).
+5. **Visualização:** 3D interativo e MP4 com os passos de saída do solver (sem interpolação no tempo).

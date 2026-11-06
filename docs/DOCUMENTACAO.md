@@ -7,7 +7,7 @@ Versão da documentação: 2026-11-05 · Licença do código: GPL-3.0 (arquivo `
 ## 1. Resumo
 O projeto investiga, com dados oficiais, a pergunta que circula em Piraju (SP): **um rompimento da barragem de Jurumirim inundaria a cidade?** Ele reúne os Planos de Ação de Emergência (PAEs) de **Jurumirim**, **Piraju** e **Paranapanema**, o Plano de Segurança de Barragem (PSB) de Piraju, o relevo de satélite e dados do IBGE e OpenStreetMap, e os apresenta num **dashboard local (Streamlit)**, em **notebooks reproduzíveis** e em **imagens e vídeos estilo drone**.
 
-**Princípio central:** não há simulação hidráulica própria. O que é oficial é mostrado como oficial; o que o projeto calculou é rotulado como **estimativa**; o que ninguém sabe fica registrado como **lacuna**.
+**Princípio central:** o dashboard não tem simulação hidráulica própria (um cenário exploratório de volume vive num repositório separado, ver [`SIMULADOR_ANUGA.md`](SIMULADOR_ANUGA.md)). O que é oficial é mostrado como oficial; o que o projeto calculou é rotulado como **estimativa**; o que ninguém sabe fica registrado como **lacuna**.
 
 | Rótulo | Significado |
 |---|---|
@@ -35,7 +35,7 @@ As perguntas e respostas de cada perfil estão em [`PERGUNTAS_E_RESPOSTAS.md`](P
 - Visão de drone: relevo sombreado, 3D interativo e vídeos.
 
 **Não feito (de propósito)**
-- Simulação hidráulica própria, HEC-RAS, nuvem paga.
+- Simulação hidráulica **no dashboard**, HEC-RAS, nuvem paga. (Existe, fora daqui, um cenário **exploratório de volume** com ANUGA, 24 h simuladas, sem calibração nem revisão de engenheiro: [`SIMULADOR_ANUGA.md`](SIMULADOR_ANUGA.md).)
 - Probabilidade de ruptura; classificação de imóveis, endereços ou rotas como seguros/inseguros.
 - Extrapolação do cenário de 568,00 m para outras cotas; **ruptura em cascata hidráulica** (permanece `not_modelled`).
 - Duração da inundação (os PAEs não trazem hidrograma completo nem recessão).

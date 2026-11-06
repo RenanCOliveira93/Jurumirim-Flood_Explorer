@@ -15,7 +15,7 @@ pres.title = "Jurumirim Flood Explorer — Piraju seria alagada?";
 pres.author = "Renan Cunha de Oliveira";
 
 // proporção das imagens (largura/altura) para encaixar sem distorcer
-const AR = { "3d_piraju.png": 1315 / 760, "3d_corredor.png": 1423 / 760, "relevo_piraju.png": 1119 / 884, "relevo_corredor.png": 1128 / 761, "relevo_paranapanema.png": 1128 / 808 };
+const AR = { "3d_piraju.png": 1315 / 760, "3d_corredor.png": 1423 / 760, "relevo_piraju.png": 1119 / 884, "relevo_corredor.png": 1128 / 761, "relevo_paranapanema.png": 1128 / 808, "sim_volume_08h.png": 1110 / 640, "sim_volume_pico.png": 1110 / 640 };
 function fit(slide, file, x, y, w, h, name) {
   const ar = AR[file]; let iw = w, ih = w / ar;
   if (ih > h) { ih = h; iw = h * ar; }
@@ -30,7 +30,7 @@ function base(title, opts = {}) {
   if (opts.tag) tag(s, opts.tag);
   return s;
 }
-const TAGS = { O: ["DADO OFICIAL", C.teal], D: ["DERIVADO DO PAE", C.green], E: ["ESTIMATIVA EXPLORATÓRIA", C.purple], I: ["ILUSTRAÇÃO", C.mute] };
+const TAGS = { O: ["DADO OFICIAL", C.teal], D: ["DERIVADO DO PAE", C.green], E: ["ESTIMATIVA EXPLORATÓRIA", C.purple], I: ["ILUSTRAÇÃO", C.mute], S: ["SIMULAÇÃO EXPLORATÓRIA", C.orange] };
 function tag(s, k) {
   const [t, col] = TAGS[k];
   s.addText(t, { x: 7.0, y: 0.05, w: 2.5, h: 0.26, fontFace: BF, fontSize: 9, bold: true, color: C.white, align: "center", valign: "middle", fill: { color: col }, margin: 0, isTextBox: true });
@@ -161,12 +161,32 @@ unk.forEach((u, i) => {
 para(s, "Essas lacunas são os próximos passos, não falhas escondidas.", 0.5, 4.5, 9, 0.5, 15);
 s.addNotes("Cascata permanece 'não modelada'. O encadeamento no dashboard é só uma hipótese de relógios.");
 
-// 15 -----------------------------------------------------------
+// 15 (novo) -----------------------------------------------------
+s = base("E se 100 % do volume saísse?", { tag: "S" });
+fit(s, "sim_volume_08h.png", 0.4, 1.15, 5.6, 3.3, "Água no vale após 8 horas de simulação");
+para(s, "Água (azul) no vale após 8 h simuladas. Relevo Copernicus 30 m.", 0.5, 4.5, 5.4, 0.6, 12);
+stat(s, 6.2, 1.2, 3.3, "7.007,52 hm³", "volume do PAE Jurumirim (premissa)", C.orange);
+stat(s, 6.2, 2.65, 1.6, "72 h", "esvaziamento (escolha)", C.orange);
+stat(s, 7.9, 2.65, 1.6, "54 mil m³/s", "pico do hidrograma", C.orange);
+para(s, "Cenário hipotético de volume. Não é ruptura nem previsão: o volume é a premissa, e a água é propagada sobre o relevo.", 6.2, 4.1, 3.3, 1.1, 11.5);
+s.addNotes("Selo SIMULAÇÃO EXPLORATÓRIA. Explique que volume não é vazão: o tempo de esvaziamento (72 h) é escolha do cenário; 6 h dariam ~650 mil m³/s e 7 dias ~23 mil m³/s. Simulador ANUGA em repositório separado (simulador-hidro-anuga). Ponto de entrada da água assumido, a ~1,2 km da barragem.");
+
+// 16 (novo) -----------------------------------------------------
+s = base("O que a simulação mostrou", { tag: "S" });
+fit(s, "sim_volume_pico.png", 0.4, 1.15, 5.6, 3.3, "Mancha de água no pico, 18 h 40 min");
+para(s, "Pico (18 h 40). Laranja: áreas urbanizadas IBGE; cinza: limite de Piraju.", 0.5, 4.5, 5.4, 0.6, 12);
+stat(s, 6.2, 1.2, 3.3, "≈ 9 %", "da área urbanizada de Piraju atingida", C.orange);
+stat(s, 6.2, 2.65, 1.6, "≈ 14 %", "da área rural", C.orange);
+stat(s, 7.9, 2.65, 1.6, "54,6 m", "pico no vale, às 18,5 h", C.orange);
+para(s, "A água fica no vale do rio. Paranapanema e Piraju entram como terreno (não é cascata). Relevo de 30 m sem o leito do rio; sem calibração nem revisão de engenheiro.", 6.2, 4.1, 3.3, 1.1, 10.5);
+s.addNotes("Resultado condicional a estas premissas e a 24 h simuladas. Não prova que a cidade seria poupada nem atingida em outro cenário. Se o volume excede a capacidade das barragens, passar por cima ou romper é esperado; isso não foi modelado. Profundidades no talvegue são ordem de grandeza. Números em docs/SIMULADOR_ANUGA.md.");
+
+// 17 -----------------------------------------------------------
 s = base("Confiabilidade e limites", { tag: "D" });
-bullets(s, ["Mais de 100 testes automáticos; tudo é reprodutível com um comando.", "As falhas que encontramos estão no relatório de validação (VALIDATION_REPORT.md).", "As fontes se contradizem em alguns números, por exemplo a vazão do vertedouro (2.621 × 2.594 m³/s); mostramos as duas.", "Seções de Piraju no mapa são ilustração; OCR sem revisão de engenheiro.", "Nada aqui é probabilidade de ruptura nem classificação de segurança."], 0.5, 1.35, 9, 3.7, 17);
+bullets(s, ["Dashboard: mais de 100 testes automáticos e reprodutível com um comando. O simulador ANUGA ainda não tem testes, calibração nem revisão de engenheiro.", "As falhas que encontramos estão no relatório de validação (VALIDATION_REPORT.md).", "As fontes se contradizem em alguns números, por exemplo a vazão do vertedouro (2.621 × 2.594 m³/s); mostramos as duas.", "Seções de Piraju no mapa são ilustração; OCR sem revisão de engenheiro.", "Nada aqui é probabilidade de ruptura nem classificação de segurança."], 0.5, 1.35, 9, 3.7, 17);
 s.addNotes("Cite as falhas encontradas. Transparência é parte da confiança.");
 
-// 16 -----------------------------------------------------------
+// 18 -----------------------------------------------------------
 s = base("Sobre o autor");
 s.addImage({ path: AUTOR, x: 0.5, y: 1.3, w: 2.4, h: 3.0, altText: "Foto de Renan Cunha de Oliveira" });
 s.addText("Renan Cunha de Oliveira", { x: 3.3, y: 1.3, w: 6.2, h: 0.5, fontFace: HF, fontSize: 24, bold: true, color: C.navy, margin: 0, isTextBox: true });
@@ -175,7 +195,7 @@ bullets(s, ["Visão computacional, agentes de IA e LLMs.", "AgTech: clima, saté
 s.addText("github.com/RenanCOliveira93", { x: 0.5, y: 4.5, w: 4, h: 0.3, fontFace: BF, fontSize: 12, color: C.mute, margin: 0, isTextBox: true });
 s.addNotes("Mais detalhes na página 'Sobre o autor' do dashboard.");
 
-// 17 -----------------------------------------------------------
+// 19 -----------------------------------------------------------
 s = base("Fontes e próximos passos", { dark: true });
 bullets(s, ["PAE UHE Jurumirim (CTG) · PAE UHE Piraju rev. 5, out/2025 e PSB (CBA) · PAE UHE Paranapanema (Enel)", "IBGE (municípios e áreas urbanizadas 2019) · Copernicus GLO-30 · OpenStreetMap", "Próximo: pedir à CBA e à CTG o mapa de ruptura de Piraju e os hidrogramas", "Código, dados e documentação: github.com/RenanCOliveira93/Jurumirim-Flood_Explorer"], 0.5, 1.35, 9, 3.4, 16, C.white);
 s.slideNumber = undefined;

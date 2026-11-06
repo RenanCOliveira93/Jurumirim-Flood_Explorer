@@ -31,3 +31,11 @@
 - **% de área urbana:** área urbanizada IBGE 2019 (≠ perímetro urbano) tocada ÷ total no município de Piraju. Mede área de mancha IBGE, **não** pessoas, imóveis ou endereços.
 - **Altitude × nível da água:** MDS 30 m; cota do PAE da seção mais próxima do ponto central da mancha; «% do terreno abaixo da cota» não exige conexão com o rio (é teto). Referenciais verticais podem diferir.
 - **Duração da inundação: NÃO calculável** (os PAEs não trazem hidrograma completo nem recessão). Só há chegada, pico e subida; o «teto de massa» V/Δ é um limite superior, não uma estimativa.
+
+## Cenário de volume no simulador ANUGA (repositório `simulador-hidro-anuga`)
+Ver [`SIMULADOR_ANUGA.md`](SIMULADOR_ANUGA.md). É um cenário **hipotético de balanço de massa**, não previsão nem ruptura.
+- **Premissas, não dados:** volume de 7.007,52 hm³ (PAE), mas **tempo de esvaziamento (72 h), forma da curva e ponto de entrada** são escolhas do cenário. Outro tempo de esvaziamento muda o pico em ordens de grandeza (6 h ≈ 650.000 m³/s; 7 dias ≈ 23.000 m³/s) e **não foi explorado**.
+- **Cascata não modelada:** Paranapanema e Piraju são terreno elevado (sem galgamento, vertedouro ou ruptura).
+- **Relevo Copernicus 30 m** (modelo de superfície): sem leito do rio, sem ruas/edificações; malha de ~100 m. Profundidades no talvegue são ordem de grandeza. Reservatórios aparecem como superfície plana.
+- **Bordas transmissivas**; balanço de massa de ponta a ponta **não verificado**; sem calibração, sensibilidade, testes automatizados ou revisão de engenheiro hidráulico.
+- Os números (≈ 9 % urbana, ≈ 14 % rural, pico de 54,6 m) valem **só para estas entradas** e 24 h simuladas; não provam que a cidade seria poupada nem atingida em outro cenário.

@@ -32,6 +32,8 @@ Os PAEs tabelam **chegada** e **pico**, mas não trazem o hidrograma completo ne
 ### E8. O que foi e o que não foi modelado sobre cascata?
 **Não foi modelada.** O PAE de Jurumirim cobre ≈ 33 km e termina na barragem de Piraju (ST-017, sem vazão tabelada); o PAE de Piraju registra que os empreendedores estão «em articulação», mas **adota ruptura isolada** (p. 58). O modo «Todas barragens selecionadas» sobrepõe cenários isolados com relógios independentes. A opção «Encadear no tempo» é só uma **hipótese de relógio**: Piraju começa a contar quando a onda de Jurumirim chega (1 h 59 min); não soma vazões nem calcula interação hidráulica. O status do cenário D permanece `not_modelled` (testado). *Ver:* «Cascata Piraju» e «Simulação».
 
+**Complemento (simulador separado, fora do dashboard):** o repositório [`simulador-hidro-anuga`](https://github.com/RenanCOliveira93/simulador-hidro-anuga) roda um cenário **exploratório de volume**: 7.007,52 hm³ de Jurumirim (volume do PAE) esvaziados em 72 h, propagados com ANUGA (águas rasas 2D) sobre o relevo Copernicus 30 m, 24 h simuladas. Paranapanema e Piraju entram como **terreno**, sem ruptura nem vertedouro; portanto isso **não** é uma simulação de cascata. Ver `docs/SIMULADOR_ANUGA.md`.
+
 ### E9. Piraju resistiria à cheia decamilenar? Qual a borda livre?
 O projeto **não afirma resistência nem falha**. Fatos do PAE (p. 44): cheia TR 10.000 natural 4.856 m³/s, amortecida por Jurumirim 2.829 m³/s (−41,7 %); nível calculado 532,66 m; crista 534,00 m; borda livre 1,34 m. O PAE também diz que o reservatório de Piraju não tem volume significativo para amortecer cheias. Não há análise estrutural neste projeto. *Ver:* «Cascata Piraju».
 
@@ -87,8 +89,10 @@ Pelos volumes dos PAEs: Jurumirim guarda **7.007,52 hm³** no nível máximo nor
 ### O5. Se uma barragem rompesse, a água derrubaria as outras?
 **Ninguém estudou isso**, e o projeto também não. Os PAEs adotam **ruptura isolada**; o de Piraju diz que os empreendedores estão «em articulação» para um estudo conjunto. O projeto mostra os cenários isolados lado a lado, e há uma opção opcional que apenas **desloca os relógios** (Piraju começaria a 1 h 59 min), sem somar vazões. Isso é uma hipótese ilustrativa, não um resultado.
 
+Há também um **cenário hipotético de volume** num simulador à parte: se 100 % do reservatório de Jurumirim (7 bilhões de m³) chegasse ao vale, a água ficaria no vale do rio e atingiria cerca de **9 % da área urbanizada** e **14 % da área rural** de Piraju em 24 h simuladas, **com as outras duas barragens tratadas como terreno**. Não é previsão, não é ruptura e depende de premissas (tempo de esvaziamento, ponto de entrada, relevo de 30 m sem o leito do rio). Ver `docs/SIMULADOR_ANUGA.md`.
+
 ### O6. Como foi feito sem rodar uma simulação?
-Reaproveitando o que já é oficial: o **mapa** do PAE de Jurumirim (convertido para dados), as **tabelas** de tempos, velocidades e cotas, e o **relevo de satélite** para as imagens em 3D. Para Piraju, que não tem mapa nos PDFs, há uma **estimativa** que preenche o terreno até a cota que o PAE informa; ela é validada contra uma figura do próprio PAE e vem sempre rotulada.
+**No dashboard**, sem simulação hidráulica: reaproveitando o que já é oficial: o **mapa** do PAE de Jurumirim (convertido para dados), as **tabelas** de tempos, velocidades e cotas, e o **relevo de satélite** para as imagens em 3D. Para Piraju, que não tem mapa nos PDFs, há uma **estimativa** que preenche o terreno até a cota que o PAE informa; ela é validada contra uma figura do próprio PAE e vem sempre rotulada.
 
 ### O7. Quão confiável é?
 Depende da parte. **Oficial:** mapa e tabelas do PAE de Jurumirim (convertidos com erro de metros a dezenas de metros). **Leitura por OCR:** tabelas de Piraju, sem revisão de engenheiro. **Estimativa:** mancha de Piraju (não é o mapa do PAE). O painel «Método e qualidade» e o relatório de validação mostram os testes e as falhas encontradas.
