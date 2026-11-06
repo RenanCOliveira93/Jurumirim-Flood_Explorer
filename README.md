@@ -60,3 +60,8 @@ Fontes: PAE Jurumirim, **PAE UHE Piraju** (CBA), **PSB de Piraju** e **PAE UHE P
 - Piraju (Tabelas 9/10) e Paranapanema vêm de tabelas/figuras dos PAEs; as Tabelas 9/10 são imagens lidas por OCR **sem revisão de engenheiro**. Posições das seções de Piraju são **ILUSTRAÇÃO**. Não há mancha georreferenciada para Piraju nem Paranapanema nos PDFs.
 - Comandos: `make estimates`, `make dams` (usa o OCR versionado), `make ocr` (opcional), `make piraju`. Os PDFs (e derivados do PSB, «Sigilo: Interno») ficam fora do Git. O dashboard inicia sem os PDFs.
 - Docs: [`COMPARACAO_JURUMIRIM_PIRAJU.md`](docs/COMPARACAO_JURUMIRIM_PIRAJU.md), [`LIMITACOES.md`](docs/LIMITACOES.md).
+
+## Apresentação, autor e publicação
+- Slides (PPTX, 17 slides com notas do apresentador): [`docs/apresentacao/Jurumirim_Flood_Explorer.pptx`](docs/apresentacao/Jurumirim_Flood_Explorer.pptx) (gerado por `docs/apresentacao/gerar_slides.js`).
+- Página **Sobre o autor** no dashboard (menu lateral).
+- Publicar em um link/subdomínio: [`docs/DEPLOY.md`](docs/DEPLOY.md) (instruções ainda não testadas).
