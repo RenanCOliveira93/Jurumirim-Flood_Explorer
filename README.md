@@ -66,6 +66,6 @@ Fontes: PAE Jurumirim, **PAE UHE Piraju** (CBA), **PSB de Piraju** e **PAE UHE P
 - Docs: [`COMPARACAO_JURUMIRIM_PIRAJU.md`](docs/COMPARACAO_JURUMIRIM_PIRAJU.md), [`LIMITACOES.md`](docs/LIMITACOES.md).
 
 ## Apresentação, autor e publicação
-- Slides (PPTX, 17 slides com notas do apresentador): [`docs/apresentacao/Jurumirim_Flood_Explorer.pptx`](docs/apresentacao/Jurumirim_Flood_Explorer.pptx) (gerado por `docs/apresentacao/gerar_slides.js`).
+- Slides (PDF): [`docs/apresentacao/Jurumirim_Flood_Explorer.pdf`](docs/apresentacao/Jurumirim_Flood_Explorer.pdf). O script `docs/apresentacao/gerar_slides.js` gerava a versão PPTX anterior.
 - Página **Sobre o autor** no dashboard (menu lateral).
 - Publicar em um link/subdomínio: [`docs/DEPLOY.md`](docs/DEPLOY.md) (instruções ainda não testadas).

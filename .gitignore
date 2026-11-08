@@ -21,6 +21,7 @@ data/processed/piraju_*
 
 # Documentos e figuras de terceiros (PDFs de PAE/PSB, imagens de notícias/vídeo): não versionar
 *.pdf
+!docs/apresentacao/Jurumirim_Flood_Explorer.pdf
 imagens-video/
 data/interim/
 # Dados derivados do PSB (cabeçalho do documento: 'Sigilo: Interno')
