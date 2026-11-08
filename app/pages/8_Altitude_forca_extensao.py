@@ -87,7 +87,7 @@ with t4:
     fig = go.Figure()
     base = D.compare_piraju(10000)
     base = base[base.secao != "ST-00"]
-    fig.add_trace(go.Scatter(x=base.distancia_km, y=base.elev_max_ruptura_m, mode="lines+markers", name="cota máx. — ruptura (T10)", line=dict(color="#8e24aa")))
+    fig.add_trace(go.Scatter(x=base.distancia_km, y=base.elev_max_ruptura_m, mode="lines+markers", name="cota máx. — ruptura (T10)", line=dict(color="#8b0000")))
     fig.add_trace(go.Scatter(x=base.distancia_km, y=base.elev_max_natural_m, mode="lines+markers", name="cota máx. — cheia natural (T9)", line=dict(color="#1565c0")))
     fund = base.elev_max_ruptura_m - base.prof_max_ruptura_m
     fig.add_trace(go.Scatter(x=base.distancia_km, y=fund, mode="lines", name="fundo do canal (cota − profundidade)", line=dict(color="#555", dash="dot")))

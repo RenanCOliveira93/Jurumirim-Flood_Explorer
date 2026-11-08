@@ -75,14 +75,14 @@ if show["zas_trecho"]:
                            tooltip=folium.GeoJsonTooltip(["zas_km_oficial", "nota"], aliases=["ZAS oficial (km)", "Observação"])).add_to(m)
 if "PIR" in sel.dam_ids:
     for tipo, flag, cores, rot in (("natural", "estim_nat", ("#1565c0", "#90caf9"), "cheia natural (sem ruptura)"),
-                                   ("ruptura", "estim", ("#8e24aa", "#ce93d8"), "ruptura")):
+                                   ("ruptura", "estim", ("#8b0000", "#e53935"), "ruptura")):
         if show[flag]:
             ep = D.estimate_polygons(tipo, _PIR_TR)
             if ep is not None and len(ep):
                 folium.GeoJson(ep.to_crs(4326)[["classe", "area_km2", "geometry"]], name=f"Estimativa Piraju — {rot}",
-                               style_function=lambda f, c=cores: {"color": c[0], "weight": 1, "dashArray": "5",
+                               style_function=lambda f, c=cores: {"color": c[0], "weight": 2, "dashArray": "5",
                                                                   "fillColor": c[0] if f["properties"]["classe"] == "ZAS" else c[1],
-                                                                  "fillOpacity": .45 if f["properties"]["classe"] == "ZAS" else .30},
+                                                                  "fillOpacity": .60 if f["properties"]["classe"] == "ZAS" else .40},
                                tooltip=folium.GeoJsonTooltip(["classe", "area_km2"], aliases=[f"ESTIMATIVA {rot} (ZAS = até 9,68 km)", "Área (km²)"])).add_to(m)
 if show["mun"]:
     mun_sel = mun[mun.nome.isin(["Piraju", "Cerqueira César", "Manduri", "Sarutaiá", "Bernardino de Campos"])]

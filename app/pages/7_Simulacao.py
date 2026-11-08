@@ -72,8 +72,8 @@ with left:
     if "PIR" in sel.dam_ids:
         ep = D.estimate_polygons("ruptura", 10000 if "10000" in (sel.scenario("PIR") or "ruptura_tr10000") else 10)
         if ep is not None and len(ep):
-            folium.GeoJson(ep.to_crs(4326)[["classe", "geometry"]], style_function=lambda f: {"color": "#8e24aa", "weight": 1, "dashArray": "5",
-                           "fillColor": "#8e24aa", "fillOpacity": .25 if f["properties"]["classe"] == "ZAS" else .12},
+            folium.GeoJson(ep.to_crs(4326)[["classe", "geometry"]], style_function=lambda f: {"color": "#8b0000", "weight": 1, "dashArray": "5",
+                           "fillColor": "#8b0000", "fillOpacity": .25 if f["properties"]["classe"] == "ZAS" else .12},
                            tooltip="ESTIMATIVA EXPLORATÓRIA (relevo até a cota do PAE); não é mapa do PAE").add_to(m)
     col = {"atingida": "#d62728", "não atingida": "#ffffff", "sem tempo no PAE": "#999999", "ainda não rompeu (hipótese)": "#eeeeee"}
     for _, r in state.iterrows():
