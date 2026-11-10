@@ -1,7 +1,7 @@
 """DEM Copernicus GLO-30 (EGM2008, ~30 m, MDS): amostragem, perfis e sombreamento.
 
 Os perfis são DESCRITIVOS do terreno. Não é válido comparar cotas simples para
-inferir alcance de inundação (ver docs/LIMITACOES.md)."""
+inferir alcance de inundação (ver docs/GUIA_TECNICO.md)."""
 from __future__ import annotations
 
 import numpy as np

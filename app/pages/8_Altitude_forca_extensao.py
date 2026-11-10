@@ -122,4 +122,4 @@ with t5:
                "Um teto não é a duração: o tempo real seria menor, e a água também pode **permanecer em baixadas** depois que a onda passa. "
                "Para saber a duração, é preciso o hidrograma de ruptura e a modelagem hidráulica do estudo original (peça à CBA/CTG).")
 
-footer("Fontes: PAEs de Jurumirim (p. 38) e Piraju (Tabelas 9 e 10, OCR), IBGE 2019, Copernicus GLO-30, OSM. Estimativa de Piraju: ver docs/LIMITACOES.md.")
+footer("Fontes: PAEs de Jurumirim (p. 38) e Piraju (Tabelas 9 e 10, OCR), IBGE 2019, Copernicus GLO-30, OSM. Estimativa de Piraju: ver docs/GUIA_TECNICO.md.")

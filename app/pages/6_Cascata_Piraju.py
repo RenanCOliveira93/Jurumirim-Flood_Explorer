@@ -86,7 +86,7 @@ with tab_gap:
                  hide_index=True, width="stretch")
     st.markdown("Pergunta em aberto: sob quais hipóteses de nível inicial, hidrograma incidente e capacidade hidráulico-estrutural "
                 "uma barragem poderia ser afetada por uma ruptura hipotética da barragem a montante? "
-                "Veja `docs/COMPARACAO_JURUMIRIM_PIRAJU.md`.")
+                "Veja `docs/GUIA_TECNICO.md`.")
 
 with tab_val:
     v = pd.DataFrame(cascade.validate())

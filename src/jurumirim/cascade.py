@@ -2,7 +2,7 @@
 
 Regras: nenhum número é inventado; cada métrica carrega documento, página e cenário;
 o cenário D (ruptura em cascata) é sempre ``not_modelled``. As afirmações do
-COMPLEMENTO_PAE_UHE_PIRAJU.md são tratadas como *alegações não verificadas* até que o PDF
+COMPLEMENTO_PAE_UHE_PIRAJU.md (nota de pesquisa local, não versionada) são tratadas como *alegações não verificadas* até que o PDF
 da Piraju esteja em ``data/raw/PAE_UHE_PIRAJU.pdf`` e seja conferido manualmente.
 """
 from __future__ import annotations
@@ -160,7 +160,7 @@ def extract_piraju(piraju_pdf: Path | None = None, out_dir: Path | None = None, 
     if not piraju_pdf.exists():
         status = dict(status="source_unavailable", document=doc_name, expected_path=str(piraju_pdf),
                       generated_on=str(date.today()),
-                      how_to_obtain=["Baixar a versão pública da CBA/Votorantim (URL em docs/SOURCE_REGISTRY.md) "
+                      how_to_obtain=["Baixar a versão pública da CBA/Votorantim (URL em docs/GUIA_TECNICO.md) "
                                      "ou solicitá-la à CBA.", f"Salvar como {piraju_pdf}", "Rodar `make piraju`."])
         (out_dir / "piraju_status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2))
         return status

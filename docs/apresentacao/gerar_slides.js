@@ -179,7 +179,7 @@ stat(s, 6.2, 1.2, 3.3, "≈ 9 %", "da área urbanizada de Piraju atingida", C.or
 stat(s, 6.2, 2.65, 1.6, "≈ 14 %", "da área rural", C.orange);
 stat(s, 7.9, 2.65, 1.6, "54,6 m", "pico no vale, às 18,5 h", C.orange);
 para(s, "A água fica no vale do rio. Paranapanema e Piraju entram como terreno (não é cascata). Relevo de 30 m sem o leito do rio; sem calibração nem revisão de engenheiro.", 6.2, 4.1, 3.3, 1.1, 10.5);
-s.addNotes("Resultado condicional a estas premissas e a 24 h simuladas. Não prova que a cidade seria poupada nem atingida em outro cenário. Se o volume excede a capacidade das barragens, passar por cima ou romper é esperado; isso não foi modelado. Profundidades no talvegue são ordem de grandeza. Números em docs/SIMULADOR_ANUGA.md.");
+s.addNotes("Resultado condicional a estas premissas e a 24 h simuladas. Não prova que a cidade seria poupada nem atingida em outro cenário. Se o volume excede a capacidade das barragens, passar por cima ou romper é esperado; isso não foi modelado. Profundidades no talvegue são ordem de grandeza. Números em docs/docs/GUIA_TECNICO.md (seção 9).");
 
 // 17 -----------------------------------------------------------
 s = base("Confiabilidade e limites", { tag: "D" });
@@ -199,7 +199,7 @@ s.addNotes("Mais detalhes na página 'Sobre o autor' do dashboard.");
 s = base("Fontes e próximos passos", { dark: true });
 bullets(s, ["PAE UHE Jurumirim (CTG) · PAE UHE Piraju rev. 5, out/2025 e PSB (CBA) · PAE UHE Paranapanema (Enel)", "IBGE (municípios e áreas urbanizadas 2019) · Copernicus GLO-30 · OpenStreetMap", "Próximo: pedir à CBA e à CTG o mapa de ruptura de Piraju e os hidrogramas", "Código, dados e documentação: github.com/RenanCOliveira93/Jurumirim-Flood_Explorer"], 0.5, 1.35, 9, 3.4, 16, C.white);
 s.slideNumber = undefined;
-s.addNotes("Referências completas em docs/DOCUMENTACAO.md. Confirmar com a CBA se o PSB (sigilo: interno) pode ser citado em público.");
+s.addNotes("Referências completas em docs/GUIA_TECNICO.md. Confirmar com a CBA se o PSB (sigilo: interno) pode ser citado em público.");
 // cores do texto em slide escuro
 s.background = { color: C.navy };
 

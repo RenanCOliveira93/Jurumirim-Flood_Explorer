@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Gera os notebooks didáticos em notebooks/ (execute com `make notebooks`)."""
+"""Gera os notebooks em notebooks/ (execute com `make notebooks`)."""
 from pathlib import Path
 
 import nbformat as nbf

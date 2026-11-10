@@ -10,7 +10,7 @@ import pandas as pd
 from . import gis
 from .paths import METADATA, PROCESSED
 
-LABELS = {  # etiquetas persistentes (docs/CONCEITO_E_PLANO.md)
+LABELS = {  # etiquetas persistentes (ver docs/GUIA_TECNICO.md)
     "OFICIAL": "DADO OFICIAL",
     "DERIVADO": "DERIVADO DO PAE",
     "ESTIMATIVA": "ESTIMATIVA EXPLORATÓRIA",

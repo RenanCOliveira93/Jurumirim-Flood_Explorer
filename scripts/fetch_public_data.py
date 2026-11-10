@@ -16,7 +16,7 @@ RAW = ROOT / "data" / "raw"
 META = ROOT / "data" / "metadata"
 RAW.mkdir(parents=True, exist_ok=True)
 META.mkdir(parents=True, exist_ok=True)
-UA = {"User-Agent": "jurumirim-flood-explorer/0.1 (estudo educacional)"}
+UA = {"User-Agent": "jurumirim-flood-explorer/0.1 (projeto independente)"}
 BBOX = (-49.55, -23.35, -49.15, -23.00)  # lon_min, lat_min, lon_max, lat_max (WGS84)
 TODAY = dt.date.today().isoformat()
 sources = {}

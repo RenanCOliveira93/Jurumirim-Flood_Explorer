@@ -57,41 +57,11 @@ def test_terrain_extremes_and_layers_are_consistent():
     assert (zw[ok] >= w["z"][ok] - 1e-6).all()
 
 
-def test_qa_document_has_three_personas_with_5_to_10_questions_each():
-    import re
-    from pathlib import Path
-    md = (Path(__file__).resolve().parents[1] / "docs" / "PERGUNTAS_E_RESPOSTAS.md").read_text(encoding="utf-8")
-    blocks = re.split(r"\n## ", md)[1:]
-    assert len(blocks) == 3
-    for b in blocks:
-        n = len(re.findall(r"\n### ", b))
-        assert 5 <= n <= 10, (b[:30], n)
-
-
-def test_qa_numbers_match_data():
-    """Números citados nas respostas conferem com as tabelas derivadas (evita texto desatualizado)."""
-    import re
-    from pathlib import Path
-    import pandas as pd
-    md = (Path(__file__).resolve().parents[1] / "docs" / "PERGUNTAS_E_RESPOSTAS.md").read_text(encoding="utf-8")
-    f = X.load("forca")
-    if f.empty:
-        pytest.skip("rode make exposure")
-    r = f[f.cenario == "ruptura TR 10000"].set_index("secao").pressao_dinamica_kpa
-    n = f[f.cenario == "cheia natural TR 10000"].set_index("secao").pressao_dinamica_kpa
-    med = (r / n).dropna().median()
-    assert f"**{med:.1f}×**".replace(".", ",") in md
-    lat = X.load("lateral_resumo").set_index("cenario")
-    assert f"**{int(lat.loc['PIR estimativa ruptura TR 10000', 'mediana_m'])} m**" in md
-    sh = X.load("urbana_pct").set_index("cenario")
-    assert f"**≈ {sh.loc['PIR estimativa ruptura TR 10000', 'pct_da_area_urbanizada']:.1f} %**".replace(".", ",") in md
-
-
 def test_documentation_numbers_match_derived_data():
     import json
     from pathlib import Path
     root = Path(__file__).resolve().parents[1]
-    doc = (root / "docs" / "DOCUMENTACAO.md").read_text(encoding="utf-8")
+    doc = (root / "docs" / "GUIA_TECNICO.md").read_text(encoding="utf-8")
     m = json.loads((root / "data" / "processed" / "dams" / "PIR" / "estimativa_metricas.json").read_text())
     assert f"{m['ruptura_tr10000']['area_total_km2']:.1f}".replace(".", ",") + " km²" in doc
     val = m["validacao_fig17_natural_tr10000"]

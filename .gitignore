@@ -32,3 +32,8 @@ data/processed/psb_*
 outputs/frames_selecao/
 outputs/timeline_selecao.mp4
 outputs/*.mp4
+
+# Material local (não versionar)
+COMO_RODAR.md
+docs/apresentacao/*.mp4
+*.mp4

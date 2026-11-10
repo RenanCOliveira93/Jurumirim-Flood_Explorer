@@ -1,71 +1,68 @@
 # Jurumirim Flood Risk Explorer
 
-> **Estudo educacional independente; não substitui o PAE oficial, a Defesa Civil ou laudo de engenharia.**
+Dashboard e pipeline reproduzível em Python que analisam os cenários de ruptura hipotética da barragem de Jurumirim (SP) publicados nos Planos de Ação de Emergência (PAEs) oficiais e seu efeito sobre o município de Piraju.
 
-Aplicativo **local** (Python + Streamlit + notebooks reproduzíveis) que investiga a lenda de que uma ruptura da barragem de
-Jurumirim inundaria toda a cidade de Piraju-SP, **usando exclusivamente o mapa e as tabelas do PAE oficial**
-(CTG Brasil, *PAE Externo UHE Jurumirim*, CTG-SB-PAEE-2026-R0-JUR, jan/2026).
+> Os resultados são cenários condicionais derivados de documentos oficiais e estimativas exploratórias rotuladas. **Não são previsão de ruptura**, não avaliam a segurança de barragens, imóveis, endereços ou rotas, e não substituem o PAE oficial, a Defesa Civil ou laudo de engenharia. O projeto não executa simulação hidráulica própria; reproduzir o mapa do PAE não valida um modelo independente.
 
-**O dashboard não tem simulação hidráulica própria.** O PAE é um estudo de emergência, não evidência de falha iminente.
-Reproduzir o mapa do PAE não valida um modelo independente. Um **cenário exploratório de volume** (e se 100 % do reservatório chegasse ao vale?)
-roda num repositório separado, com ANUGA: veja [`docs/SIMULADOR_ANUGA.md`](docs/SIMULADOR_ANUGA.md). English: [README.en.md](README.en.md).
+English: [README.en.md](README.en.md)
 
-## O que o estudo encontrou (derivado do PAE, p. 38)
-| Pergunta | Resultado | Ressalva |
+## Funcionalidades
+- Extração da tabela de seções e do mapa de inundação do PAE de Jurumirim (prancha p. 38), georreferenciamento (RMS 0,47 m) e vetorização das manchas ZAS/ZSS.
+- Sobreposição da envoltória com município e áreas urbanizadas (IBGE 2019), relevo (Copernicus GLO-30) e vias (OSM).
+- Barragens a jusante (Piraju e Paranapanema): fatos dos PAEs, seções e tempos (Tabelas 9/10 lidas por OCR), ZAS como trecho de rio e estimativa exploratória de mancha para Piraju, rotulada e separada do dado oficial.
+- Filtro de barragens («Por Barragem Isolada» ou «Todas barragens selecionadas») e métricas de exposição (pressão dinâmica, avanço lateral, altitude, % de área urbanizada).
+- Dashboard Streamlit, 6 notebooks e imagens/vídeos de visão de drone.
+- Rótulos persistentes: `DADO OFICIAL`, `DERIVADO DO PAE`, `ESTIMATIVA EXPLORATÓRIA`, `ILUSTRAÇÃO`.
+
+## Resultados principais (derivados do PAE de Jurumirim, p. 38)
+| Item | Resultado | Ressalva |
 |---|---|---|
-| Alcance modelado | ~33 km, da UHE Jurumirim até a barragem da UHE Piraju | O PAE não modela além da UHE Piraju |
-| Envoltória de ruptura (ZAS+ZSS) digitalizada | ≈ 30,4 km² (ZAS ≈ 6,8 km²) | Vetorização por cor de raster; incerteza de metros a dezenas de metros |
-| Fração do município de Piraju na envoltória | ≈ 5,3 % (26,8 km² de 506 km²) | Predominantemente rural/ribeirinha |
-| Maior mancha urbanizada de Piraju (IBGE 2019) | **≈ 2,0 km** da envoltória, sem interseção | IBGE 2019 ≠ perímetro urbano legal |
-| Manchas urbanizadas pequenas e pouco densas que intersectam | 2 polígonos, 3.326 m² no total (≤ 1,1 % de cada) | Ordem da incerteza de digitalização; PAE rotula ST-014/015 como «Área urbana Pirajú ME» |
-| Tempo até a UHE Piraju | 1 h 59 min (sobrelevação ≥ 0,61 m) | Tabelado no PAE |
+| Alcance modelado | ~33 km, até a barragem da UHE Piraju | o PAE não modela além dela |
+| Envoltória de ruptura (ZAS+ZSS) | ≈ 30,4 km² (ZAS ≈ 6,8 km²) | vetorização por cor de raster; incerteza de metros a dezenas de metros |
+| Fração do município de Piraju na envoltória | ≈ 5,3 % (26,8 de 506 km²) | predominantemente rural/ribeirinha |
+| Maior mancha urbanizada (IBGE 2019) | ≈ 2,0 km da envoltória, sem interseção | IBGE 2019 não é perímetro urbano legal |
+| Manchas urbanizadas pequenas que intersectam | 2 polígonos, 3.326 m² no total | mesma ordem da incerteza de digitalização |
+| Tempo até a UHE Piraju | 1 h 59 min (sobrelevação >= 0,61 m) | tabelado no PAE |
 
-**Isto não classifica nenhum endereço, imóvel ou rota como seguro ou inseguro.** Consulte a Defesa Civil.
+A ruptura em cascata (Jurumirim, Piraju, Paranapanema) **não é modelada**: o modo «Todas barragens selecionadas» sobrepõe cenários isolados. Limitações completas: [guia técnico, seção 11](docs/GUIA_TECNICO.md#11-limitações-conhecidas).
 
-## Início rápido (macOS)
+![Corredor Jurumirim a Piraju em 3D](docs/img/3d_corredor.png)
+
+## Arquitetura
+```
+PDFs oficiais (fora do Git) -> extração -> georreferência/vetorização --+
+IBGE / Copernicus / OSM -> fetch_public_data.py -> SIG (interseções) ---+--> data/processed
+                                                                         +--> app/ (Streamlit) · notebooks/ · docs/img
+```
+
+## Início rápido
+Requer Python >= 3.11.
 ```bash
 make setup     # cria .venv e instala dependências
-make test      # 100+ testes (parser, CRS, geometria, barragens, filtro, app...)
+make test      # suíte pytest
 make run       # dashboard em http://localhost:8501
 ```
-`make data` refaz o pipeline (exige o PDF do PAE na raiz e internet para IBGE/Copernicus/OSM).
-`make notebooks`, `make video`, `make frames`. Detalhes: [docs/GUIA_MACOS.md](docs/GUIA_MACOS.md).
+`make run` e `make test` funcionam sem os PDFs oficiais, com os dados processados versionados. Para refazer o pipeline (`make data`, `make dams`, `make estimates`, `make exposure`, `make notebooks`, `make drone`) consulte a [seção 3 do guia técnico](docs/GUIA_TECNICO.md#3-instalação-e-execução).
 
-## Estrutura
-- `src/jurumirim/` — pacote (extração, georreferenciamento, vetorização, SIG, terreno, gráficos, animação, relatório)
-- `app/` — dashboard Streamlit (Visão geral, Mapa, Seções, Comparação, Método e qualidade, Exportação, Cascata Piraju, Simulação) com **filtro lateral de barragens**
-- `notebooks/` — 01 extração PAE · 02 CRS/georreferenciamento · 03 DEM e perfis · 04 interseção · 05 tempo de chegada e incerteza · 06 barragens a jusante (Piraju/Paranapanema)
-- `data/processed/`, `data/metadata/` — resultados e procedência (`pae_provenance.json`, `public_data_sources.json`)
-- `docs/` — [metodologia](docs/METODOLOGIA.md) · [dados](docs/DADOS.md) · [limitações](docs/LIMITACOES.md) · [licenças](docs/LICENCAS.md) · [validação](docs/VALIDACAO.md) · [storyboard GenAI (opcional)](docs/STORYBOARD_GENAI.md)
-- [`VALIDATION_REPORT.md`](VALIDATION_REPORT.md) — comandos realmente executados, resultados e pendências
+## Estrutura do repositório
+```
+app/            dashboard Streamlit
+src/jurumirim/  pacote (extração, georreferência, vetorização, SIG, relevo, exposição, animação)
+scripts/        pipelines e utilitários
+notebooks/      01 extração · 02 CRS · 03 DEM · 04 interseção · 05 tempo e incerteza · 06 barragens a jusante
+data/           raw (dados públicos), processed (derivados), metadata (procedência)
+docs/           guia técnico, imagens e apresentação (PDF)
+tests/          testes automatizados
+```
 
-## Documentação, perguntas e apresentação
-- [`docs/DOCUMENTACAO.md`](docs/DOCUMENTACAO.md): documentação completa (resultados, método, limites, referências).
-- [`docs/PERGUNTAS_E_RESPOSTAS.md`](docs/PERGUNTAS_E_RESPOSTAS.md): 30 perguntas e respostas (👷 engenheiro, 🏠 morador, 🌍 pessoa de fora); também na página «Perguntas por perfil».
-- [`docs/ROTEIRO_APRESENTACAO.md`](docs/ROTEIRO_APRESENTACAO.md): roteiro de vídeo e slides.
-- **Visão de drone** (relevo sombreado, 3D, vídeos): `make drone`.
+## Dados e licenças
+- Os PDFs dos PAEs e do PSB são documentos de terceiros e **não são redistribuídos** (ignorados pelo Git); o PSB de Piraju está marcado «Sigilo: Interno».
+- IBGE (dados abertos), Copernicus DEM GLO-30 (licença Copernicus) e OpenStreetMap (ODbL 1.0), com atribuições no [guia técnico](docs/GUIA_TECNICO.md#13-licenças-e-atribuições).
 
-![Corredor Jurumirim → Piraju em 3D](docs/img/3d_corredor.png)
+## Documentação
+- [Guia técnico](docs/GUIA_TECNICO.md): arquitetura, fontes, metodologia, validação, limitações, deploy e solução de problemas.
+- [Apresentação (PDF)](docs/apresentacao/Jurumirim_Flood_Explorer.pdf).
+- Cenário exploratório de volume (ANUGA), em repositório separado: [simulador-hidro-anuga](https://github.com/RenanCOliveira93/simulador-hidro-anuga); resumo na [seção 9 do guia](docs/GUIA_TECNICO.md#9-cenário-exploratório-de-volume-anuga).
 
-## Cenário de volume (simulador ANUGA, repositório separado)
-7.007,52 hm³ de Jurumirim (volume do PAE) esvaziados em 72 h, 24 h simuladas sobre o relevo Copernicus 30 m: a água fica no vale do rio e atinge **≈ 9 % da área urbanizada** e **≈ 14 % da área rural** de Piraju; pico de 54,6 m às 18,5 h. **Cenário hipotético, Paranapanema e Piraju tratadas como terreno (não é cascata), sem calibração nem revisão de engenheiro.** Detalhes, limites e vídeo: [`docs/SIMULADOR_ANUGA.md`](docs/SIMULADOR_ANUGA.md) · [`simulador-hidro-anuga`](https://github.com/RenanCOliveira93/simulador-hidro-anuga).
-
-## Etiquetas
-`DADO OFICIAL` (valor do PAE) · `DERIVADO DO PAE` (processado) · `ESTIMATIVA EXPLORATÓRIA` · `ILUSTRAÇÃO` · `SIMULAÇÃO EXPLORATÓRIA` (só no simulador/slides: cenário hipotético de volume).
-
-## Barragens a jusante e filtro do dashboard
-Fontes: PAE Jurumirim, **PAE UHE Piraju** (CBA), **PSB de Piraju** e **PAE UHE Paranapanema** (Enel). Veja [`docs/SOURCE_REGISTRY.md`](docs/SOURCE_REGISTRY.md).
-- **Filtro lateral** (persiste entre páginas): **«Por Barragem Isolada»** ou **«Todas barragens selecionadas»**. A página *Simulação* e as demais páginas usam esse filtro.
-- **Mapa:** Jurumirim traz as manchas ZAS/ZSS do PAE. Piraju e Paranapanema trazem a **ZAS como trecho de rio** (9,68 e 10 km) e a **situação normal** (água atual, OSM) para comparar. Só Piraju tem uma **ESTIMATIVA exploratória de mancha** (relevo até a cota do PAE), separada do dado oficial; veja os limites em `docs/LIMITACOES.md`.
-- **«Encadear no tempo»** (opcional, só em «Todas»): hipótese de ruptura sequencial que desloca os relógios pelos tempos dos PAEs; não soma vazões.
-- **Página «Altitude, força, extensão e duração»:** pressão dinâmica da água, avanço lateral além da margem normal, % da área urbanizada tocada, altitude × cota da água e o que se pode (e não se pode) dizer sobre duração. `make exposure`.
-- Os resultados são **incrementais**: acrescentar uma barragem não apaga nem altera as já selecionadas.
-- «Todas» **sobrepõe cenários isolados**, cada um com o relógio da própria ruptura. **Não é simulação de cascata**; a ruptura em cascata permanece **não modelada**.
-- Piraju (Tabelas 9/10) e Paranapanema vêm de tabelas/figuras dos PAEs; as Tabelas 9/10 são imagens lidas por OCR **sem revisão de engenheiro**. Posições das seções de Piraju são **ILUSTRAÇÃO**. Não há mancha georreferenciada para Piraju nem Paranapanema nos PDFs.
-- Comandos: `make estimates`, `make dams` (usa o OCR versionado), `make ocr` (opcional), `make piraju`. Os PDFs (e derivados do PSB, «Sigilo: Interno») ficam fora do Git. O dashboard inicia sem os PDFs.
-- Docs: [`COMPARACAO_JURUMIRIM_PIRAJU.md`](docs/COMPARACAO_JURUMIRIM_PIRAJU.md), [`LIMITACOES.md`](docs/LIMITACOES.md).
-
-## Apresentação, autor e publicação
-- Slides (PDF): [`docs/apresentacao/Jurumirim_Flood_Explorer.pdf`](docs/apresentacao/Jurumirim_Flood_Explorer.pdf). O script `docs/apresentacao/gerar_slides.js` gerava a versão PPTX anterior.
-- Página **Sobre o autor** no dashboard (menu lateral).
-- Publicar em um link/subdomínio: [`docs/DEPLOY.md`](docs/DEPLOY.md) (instruções ainda não testadas).
+## Licença
+GPL-3.0. Ver [LICENSE](LICENSE).
